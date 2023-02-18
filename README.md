@@ -2,7 +2,7 @@
 
 ## BUILT-IN DIRECTIVES:
 1. `<section *ngIf="showSection">`
-2. `<li *ngFor="let item of list">`
+2. `<li *ngFor="let item of list">` or `*ngFor="let item of list; let i = index"`
 3. 
 ```
 <div [ngSwitch]="conditionExpression">
@@ -17,8 +17,28 @@
     </ng-template> 
 </div>
 ```
-4. `<div [ngClass]="{'active': isActive, 'disabled': isDisabled}">`
-5. `<div [ngStyle]="{'property': 'value'}">` or `<div [ngStyle]="dynamicStyles()">`
+4. `<div [ngClass]="{'checkbox-active': isSelectedAllAccount || isIndeterminate, 'disabled': isDisabled}">` or `<div [ngClass]="condition ? 'filled' : 'not-fill'">`
+5. `<div [ngStyle]="{'property': 'value'}">` or `<div [ngStyle]="dynamicStyles()">` or `<div [ngStyle]="{'pointer-events': condition ? 'none' : 'unset'}">`
+6.
+```
+<ng-container *ngTemplateOutlet="guaranteeDetailsBody"></ng-container>
+
+<ng-template #guaranteeDetailsBody>
+  <ng-container [ngSwitch]="typeOfLg?.value">
+    <ng-container *ngSwitchCase="typeOfLgId.PAPER" [ngTemplateOutlet]="lgBody"></ng-container>
+    <ng-container *ngSwitchCase="typeOfLgId.ELECTRONIC" [ngTemplateOutlet]="elgBody"></ng-container>
+  </ng-container>
+</ng-template>
+
+<ng-template #elgBody>
+  <div class="mt-12px text-data color-precious-blue" uiGrid [cols]="2" [gap]="'24px'">
+    <div *ngFor="let elg of data.elgGuaranteeDetails">
+      <label>{{ elg.label }}</label>
+      <div>{{ elg.value }}</div>
+    </div>
+  </div>
+</ng-template>
+```
 
 ## CLASS DECORATORS:
 `import { Directive, … } from '@angular/core';`
