@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { YenValueComponent } from './yen-value/yen-value.component';
 import { UsdValueComponent } from './usd-value/usd-value.component';
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../app.component';
 import { CurrencyConverterComponent } from './currency-converter.component';
 
 

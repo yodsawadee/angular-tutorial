@@ -6,19 +6,14 @@ import { CollapseModule } from '@coreui/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ErrorMsgComponent } from './reactive-form/error-msg/error-msg.component';
+import { ComponentModule } from './component/component.module';
 import { HelperService } from './helper.service';
-import { CurrencyConverterModule } from './currency-converter/currency-converter.module';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorMsgComponent,
-    ReactiveFormComponent,
   ],
   imports: [
-    CurrencyConverterModule,
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
@@ -27,6 +22,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CollapseModule,
+    ComponentModule,
   ],
   providers: [HelperService],
   bootstrap: [AppComponent],
