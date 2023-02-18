@@ -1,0 +1,47 @@
+<h1>Form with validator</h1>
+<form [formGroup]="form" class="form-search" fxLayout="column" fxLayoutAlign="space-between center" (ngSubmit)="submit()">
+    <span class="input-container">
+        <!-- <label class="elm-input-label" >Card Number</label> -->
+        <input data-test-id="number-input" type="text" formControlName="cardNumber" class="" [maxLength]="16" placeholder="Card Number placeholder">
+        <!-- <p data-test-id="number-input-error" *ngIf="form.get('cardNumber').errors.digitOnly">Invalid Card Number</p>
+        <app-error-msg [control]="form.get('cardNumber')" [controlName]="'cardNumber'" *ngIf="!form.get('cardNumber').errors.digitOnly"></app-error-msg> -->
+        <app-error-msg [control]="$any(form.get('cardNumber'))" [controlName]="'cardNumber'"></app-error-msg>
+    </span>
+    <span class="input-container">
+        <!-- <label class="elm-input-label" >Cardholder Name</label> -->
+        <input data-test-id="name-input" type="text" formControlName="cardholderName" class="">
+        <app-error-msg [control]="$any(form.get('cardholderName'))" [controlName]="'cardholderName'"></app-error-msg>
+    </span>
+
+    <span class="input-container-inline">
+        <input data-test-id="month-input" type="text" formControlName="month" class="" [maxLength]="2" (blur)="addZero($any(form.get('month')))" >
+        <input data-test-id="year-input" type="text" formControlName="year" class="" [maxLength]="4">
+        <div></div>
+        <input data-test-id="cvv-input" type="text" formControlName="cvv" class="" [maxLength]="3">
+
+        <label class="elm-input-label">Month</label>
+        <label class="elm-input-label">Year</label>
+        <div></div>
+        <label class="elm-input-label">CVV/CVC</label>
+
+        <app-error-msg [control]="$any(form.get('month'))" [controlName]="'month'"></app-error-msg>
+        <!-- <p data-test-id="number-input-error" *ngIf="form.get('month').errors.digitOnly || form.get('month').errors.maxAmount">Invalid Month</p> -->
+        <app-error-msg [control]="$any(form.get('year'))" [controlName]="'year'"></app-error-msg>
+        <div></div>
+        <app-error-msg [control]="$any(form.get('cvv'))" [controlName]="'cvv'"></app-error-msg>
+        <!-- <p data-test-id="number-input-error" *ngIf="form.get('cvv').errors.digitOnly">Invalid CVV/CVC</p> -->
+
+    </span>
+    
+
+    <span class="input-container">
+        <button type="submit" [disabled]="validateDisableForm()" data-test-id="submit-button">Submit</button>
+    </span>
+    <!-- <button type="submit" [disabled]="validateDisableForm()" data-test-id="submit-button">Submit</button> -->
+    <!-- <button class="elm-btn elm-btn-primary btn-xl" (click)="submitForm()" [disabled]="validateDisableForm()">Submit</button> -->
+</form>
+
+<span *ngIf="form.controls['cardNumber'].getRawValue().length > 0">
+    <!-- two-way data binding -->
+    Card Number: <input [(ngModel)]="cardNumberModel" [ngModelOptions]="{standalone: true}" style="border: none;">
+</span>

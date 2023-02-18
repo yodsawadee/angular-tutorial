@@ -1,0 +1,8 @@
+<h1 style="text-align: center;">Currency Converter</h1>
+
+<div class="layout-row justify-content-center mt-50">
+  <app-yen-value [yenValue]="yenValueStr" (onYenValueChange)="onYenValueChange($event)"></app-yen-value>
+  <app-usd-value [usdValue]="usdValueStr" (onUsdValueChange)="onUsdValueChange($event)"></app-usd-value>
+  <div></div>
+</div>
+<br/><br/>

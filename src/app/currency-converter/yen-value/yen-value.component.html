@@ -1,0 +1,15 @@
+<div class="card mr-20 w-18">
+  <h3 class="card-text text-center my-0 py-20">Japanese Yen</h3>
+  <textarea
+    name="yenValue"
+    rows={{6}}
+    cols={{30}}
+    placeholder="Enter value in Yen"
+    class="mx-25 mb-25"
+    data-test-id="yen-value"
+    (input)="getYenValue($any($event.target).value)"
+    [(ngModel)]="yenValue"
+  >
+  </textarea>
+</div>
+  

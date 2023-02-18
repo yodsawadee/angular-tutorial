@@ -1,0 +1,14 @@
+<div class="card w-18 ml-20">
+  <h3 class="card-text text-center my-0 py-20">US Dollar</h3>
+  <textarea
+    name="usdValue"
+    rows={{6}}
+    cols={{30}}
+    placeholder="Enter value in USD"
+    class="mx-25 mb-25"
+    data-test-id="usd-value"
+    (input)="getUsdValue($any($event.target).value)"
+    [(ngModel)]="usdValue"
+  >
+  </textarea>
+</div>

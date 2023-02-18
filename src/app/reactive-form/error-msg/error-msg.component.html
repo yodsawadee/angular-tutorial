@@ -1,0 +1,14 @@
+<ng-container *ngIf="touched">
+    <p class="error-msg" *ngIf="errors['required']">{{controlNameMsg}} is required</p>
+    <ng-container *ngIf="(errors['pattern'] || errors['digitOnly'] || errors['range']); else notValiatePattern">
+        <!-- <p class="error-msg">Invalid {{controlNameMsg}}</p> -->
+        <p data-test-id="number-input-error" *ngIf="controlName==='cardNumber'">Invalid Card Number</p>
+        <p data-test-id="name-input-error" *ngIf="controlName==='cardholderName'">Invalid Cardholder Name</p>
+        <p data-test-id="month-input-error" *ngIf="controlName==='month'">Invalid Month</p>
+        <p data-test-id="year-input-error" *ngIf="controlName==='year'">Invalid Year</p>
+        <p data-test-id="cvv-input-error" *ngIf="controlName==='cvv'">Invalid CVV/CVC</p>
+    </ng-container>
+    <ng-template #notValiatePattern>
+        <p class="error-msg" *ngIf="errors['length']">Invalid {{controlNameMsg}} length</p>
+    </ng-template>
+</ng-container>
