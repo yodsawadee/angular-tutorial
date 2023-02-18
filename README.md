@@ -1,27 +1,59 @@
-# AngularTutorial
+# Angular Tutorial
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+## BUILT-IN DIRECTIVES:
+1. `<section *ngIf="showSection">`
+2. `<li *ngFor="let item of list">`
+3. 
+```
+<div [ngSwitch]="conditionExpression">
+    <ng-template [ngSwitchCase]="case1Exp"> 
+        … 
+    </ng-template>
+    <ng-template ngSwitchCase="case2LiteralString"> 
+        … 
+    </ng-template>
+    <ng-template ngSwitchDefault> 
+        … 
+    </ng-template> 
+</div>
+```
+4. `<div [ngClass]="{'active': isActive, 'disabled': isDisabled}">`
+5. `<div [ngStyle]="{'property': 'value'}">` or `<div [ngStyle]="dynamicStyles()">`
 
-## Development server
+## CLASS DECORATORS:
+`import { Directive, … } from '@angular/core';`
+- `@Component`
+- `@Injectable`
+- `@Directive`
+- `@Pipe`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## CLASS FIELD DECORATORS FOR DIRECTIVES AND COMPONENTS:
+`import { Input, … } from '@angular/core';`
+- `@Input() myProperty;`
+- `@Output() myEvent = new EventEmitter();`
+- `@HostBinding('class.valid') isValid;`
+- `@HostListener('click', ['$event']) onClick(e)`
+- `@ContentChild(myPredicate) myChildComponent;`
+- `@ContentChildren(myPredicate) myChildComponents;`
+- `@ViewChild(myPredicate) myChildComponent;`
+- `@ViewChildren(myPredicate) myChildComponents;`
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## DIRECTIVE AND COMPONENT CHANGE DETECTION AND LIFECYCLE HOOKS (IMPLEMENTED AS CLASS METHODS):
+1. `constructor(myService: MyService, …)`
+Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+2. `ngOnChanges(changeRecord)`
+Called after every change to input properties and before processing content or child views.
+3. `ngOnInit()`
+Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+4. `ngDoCheck()`
+Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
+5. `ngAfterContentInit()`
+Called after ngOnInit when the component's or directive's content has been initialized.
+6. `ngAfterContentChecked()`
+Called after every check of the component's or directive's content.
+7. `ngAfterViewInit()`
+Called after ngAfterContentInit when the component's views and child views / the view that a directive is in has been initialized.
+8. `ngAfterViewChecked()`
+Called after every check of the component's views and child views / the view that a directive is in.
+9. `ngOnDestroy()`
+Called once, before the instance is destroyed.
