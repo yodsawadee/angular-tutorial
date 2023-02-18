@@ -17,24 +17,24 @@
     </ng-template> 
 </div>
 ```
-4. `<div [ngClass]="{'checkbox-active': isSelectedAllAccount || isIndeterminate, 'disabled': isDisabled}">` or `<div [ngClass]="condition ? 'filled' : 'not-fill'">`
-5. `<div [ngStyle]="{'property': 'value'}">` or `<div [ngStyle]="dynamicStyles()">` or `<div [ngStyle]="{'pointer-events': condition ? 'none' : 'unset'}">`
+4. `<div [ngClass]="condition ? 'filled' : 'not-fill'">` or `<div [ngClass]="{'checkbox-active': isSelectedAllAccount || isIndeterminate, 'disabled': isDisabled}">`
+5. `<div [ngStyle]="{'pointer-events': condition ? 'none' : 'unset'}">` or `<div [ngStyle]="{'property': 'value'}">` or `<div [ngStyle]="dynamicStyles()">`
 6.
 ```
-<ng-container *ngTemplateOutlet="guaranteeDetailsBody"></ng-container>
+<ng-container *ngTemplateOutlet="detailsBody"></ng-container>
 
-<ng-template #guaranteeDetailsBody>
-  <ng-container [ngSwitch]="typeOfLg?.value">
-    <ng-container *ngSwitchCase="typeOfLgId.PAPER" [ngTemplateOutlet]="lgBody"></ng-container>
-    <ng-container *ngSwitchCase="typeOfLgId.ELECTRONIC" [ngTemplateOutlet]="elgBody"></ng-container>
+<ng-template #detailsBody>
+  <ng-container [ngSwitch]="typeOfForm?.value">
+    <ng-container *ngSwitchCase="form1" [ngTemplateOutlet]="form1Body"></ng-container>
+    <ng-container *ngSwitchCase="form2" [ngTemplateOutlet]="form2Body"></ng-container>
   </ng-container>
 </ng-template>
 
-<ng-template #elgBody>
+<ng-template #form1Body>
   <div class="mt-12px text-data color-precious-blue" uiGrid [cols]="2" [gap]="'24px'">
-    <div *ngFor="let elg of data.elgGuaranteeDetails">
-      <label>{{ elg.label }}</label>
-      <div>{{ elg.value }}</div>
+    <div *ngFor="let item of data.list">
+      <label>{{ item.label }}</label>
+      <div>{{ item.value }}</div>
     </div>
   </div>
 </ng-template>
