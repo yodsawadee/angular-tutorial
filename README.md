@@ -2,7 +2,7 @@
 
 ## BUILT-IN DIRECTIVES:
 1. `<section *ngIf="showSection">`
-2. `<li *ngFor="let item of list">` or `*ngFor="let item of list; let i = index"`
+2. `<li *ngFor="let item of list">` or `<ng-container *ngFor="let item of list; let i = index; let last = last">`
 3. 
 ```
 <div [ngSwitch]="conditionExpression">
