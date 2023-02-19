@@ -14,6 +14,11 @@ import { SubjectComponent } from './subject/subject.component';
 import { ApiDataComponent } from './api-data/api-data.component';
 import { BuiltInDirectivesComponent } from './built-in-directives/built-in-directives.component';
 import { TransactionSummaryComponent } from './built-in-directives/transaction-summary/transaction-summary.component';
+import { UseCustomDirectiveComponent } from './use-custom-directive/use-custom-directive.component';
+import { CustomDirectiveDirective } from './use-custom-directive/directive/custom-directive.directive';
+import { AttributeDirectiveDirective } from './use-custom-directive/directive/attribute-directive.directive';
+import { HostListenerDirectiveDirective } from './use-custom-directive/directive/host-listener-directive.directive';
+import { HostBindingDirectiveDirective } from './use-custom-directive/directive/host-binding-directive.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,11 @@ import { TransactionSummaryComponent } from './built-in-directives/transaction-s
     ApiDataComponent,
     BuiltInDirectivesComponent,
     TransactionSummaryComponent,
+    UseCustomDirectiveComponent,
+    CustomDirectiveDirective,
+    AttributeDirectiveDirective,
+    HostListenerDirectiveDirective,
+    HostBindingDirectiveDirective,
   ],
   imports: [
     CommonModule,
@@ -44,6 +54,7 @@ import { TransactionSummaryComponent } from './built-in-directives/transaction-s
     SubjectComponent,
     ApiDataComponent,
     BuiltInDirectivesComponent,
+    UseCustomDirectiveComponent
   ]
 })
 export class ComponentModule { }
