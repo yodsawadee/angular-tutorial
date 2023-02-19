@@ -8,6 +8,9 @@ import { YenValueComponent } from './currency-converter/yen-value/yen-value.comp
 import { UsdValueComponent } from './currency-converter/usd-value/usd-value.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ErrorMsgComponent } from './reactive-form/error-msg/error-msg.component';
+import { SendMessageComponent } from './subject/send-message/send-message.component';
+import { RecieveMessageComponent } from './subject/recieve-message/recieve-message.component';
+import { SubjectComponent } from './subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { ErrorMsgComponent } from './reactive-form/error-msg/error-msg.component
     UsdValueComponent,
     ReactiveFormComponent,
     ErrorMsgComponent,
+    SubjectComponent,
+    SendMessageComponent,
+    RecieveMessageComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +32,6 @@ import { ErrorMsgComponent } from './reactive-form/error-msg/error-msg.component
   providers: [],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [CurrencyConverterComponent,ReactiveFormComponent]
+  exports: [CurrencyConverterComponent,ReactiveFormComponent,SubjectComponent]
 })
 export class ComponentModule { }
