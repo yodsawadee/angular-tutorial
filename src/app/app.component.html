@@ -1,10 +1,10 @@
 <button (click)="toggleCollapse(0)" cButton class="btn btn-primary">Template-driven form</button>
 <button (click)="toggleCollapse(1)" cButton class="btn btn-success">Reactive Form</button>
-<button (click)="toggleCollapse(2)" cButton class="btn btn-danger">Subject, Observables & RxJS library</button>
+<button (click)="toggleCollapse(2)" cButton class="btn btn-danger">Subject, Observables</button>
+<button (click)="toggleCollapse(6)" cButton class="btn btn-dark">API</button>
 <button (click)="toggleCollapse(3)" cButton class="btn btn-warning">CLASS FIELD DECORATORS: e.g. ViewChild</button>
 <button (click)="toggleCollapse(4)" cButton class="btn btn-info">Directive</button>
 <button (click)="toggleCollapse(5)" cButton class="btn btn-secondary">Pipe</button>
-<button (click)="toggleCollapse(6)" cButton class="btn btn-dark">Lifecycle</button>
 <br/><br/>
 <div [visible]="visible[0]" cCollapse *ngIf="visible[0]"><app-currency-converter></app-currency-converter></div>
 <div [visible]="visible[1]" cCollapse *ngIf="visible[1]"><app-reactive-form></app-reactive-form></div>
@@ -12,4 +12,4 @@
 <div [visible]="visible[3]" cCollapse *ngIf="visible[3]">3</div>
 <div [visible]="visible[4]" cCollapse *ngIf="visible[4]">4</div>
 <div [visible]="visible[5]" cCollapse *ngIf="visible[5]">5</div>
-<div [visible]="visible[6]" cCollapse *ngIf="visible[6]">6</div>
+<div [visible]="visible[6]" cCollapse *ngIf="visible[6]"><app-api-data></app-api-data></div>

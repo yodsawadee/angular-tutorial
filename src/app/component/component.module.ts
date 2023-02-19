@@ -11,6 +11,7 @@ import { ErrorMsgComponent } from './reactive-form/error-msg/error-msg.component
 import { SendMessageComponent } from './subject/send-message/send-message.component';
 import { RecieveMessageComponent } from './subject/recieve-message/recieve-message.component';
 import { SubjectComponent } from './subject/subject.component';
+import { ApiDataComponent } from './api-data/api-data.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SubjectComponent } from './subject/subject.component';
     SubjectComponent,
     SendMessageComponent,
     RecieveMessageComponent,
+    ApiDataComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,6 @@ import { SubjectComponent } from './subject/subject.component';
   providers: [],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [CurrencyConverterComponent,ReactiveFormComponent,SubjectComponent]
+  exports: [CurrencyConverterComponent,ReactiveFormComponent,SubjectComponent,ApiDataComponent]
 })
 export class ComponentModule { }

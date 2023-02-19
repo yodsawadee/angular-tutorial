@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
-import { HelperService } from './helper.service';
+import { HelperService } from './service/helper.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     this.helperService.someVar = 100;
 
     this.someVar$.subscribe(it=> {
-      console.log('this.helperService.someVar = ',this.helperService.someVar);
+      // console.log('this.helperService.someVar = ',this.helperService.someVar);
       this.helperService.someVar += it;
     });
 

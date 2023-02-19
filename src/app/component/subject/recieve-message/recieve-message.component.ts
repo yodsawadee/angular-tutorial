@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { HelperService } from 'src/app/helper.service';
+import { HelperService } from 'src/app/service/helper.service';
 
 @Component({
   selector: 'app-recieve-message',

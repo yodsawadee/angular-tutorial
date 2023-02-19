@@ -31,7 +31,7 @@ export class HelperService implements OnDestroy {
 
   subscribeToApiFailures(_callback: any) {
     this.hasApiFailure$.pipe(takeUntil(this.destroy$)).subscribe((apiFailed) => {
-      console.log('apiFailed: ', apiFailed);
+      // console.log('apiFailed: ', apiFailed);
       if (apiFailed) {
         _callback();
       }
