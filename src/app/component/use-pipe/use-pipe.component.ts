@@ -31,6 +31,7 @@ export class UsePipeComponent implements OnInit {
   }
 
   constructor(private studentService: StudentService, public helperService: HelperService) { }
+  // ref: https://angular.io/guide/pipes
 
   ngOnInit() {
     this.students = this.studentService.students;

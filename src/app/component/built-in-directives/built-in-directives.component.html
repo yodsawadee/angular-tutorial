@@ -1,5 +1,11 @@
 <input type="text" [ngModel]="name" (ngModelChange)="nameChange($event)" #nameRef><br/>
-name: {{nameStr}}<br/><br/>
+<div *ngIf="nameStr?.length > 0">name: {{nameStr}}</div>
+<br/><br/>
+
+<span *ngFor="let data of dataList">
+    <li >{{data.id}} | {{data.download_url}}</li>
+    <img src="{{data.download_url}}" width="500">
+</span>
 
 <transaction-summary [title]="'title'" [subtitle]="'subtitle'">
     <ng-container summary-detail>
