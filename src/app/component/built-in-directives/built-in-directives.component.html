@@ -1,0 +1,16 @@
+<input type="text" [ngModel]="name" (ngModelChange)="nameChange($event)" #nameRef><br/>
+name: {{nameStr}}<br/><br/>
+
+<transaction-summary [title]="'title'" [subtitle]="'subtitle'">
+    <ng-container summary-detail>
+        summary-detail contect
+    </ng-container>
+    <ng-container action-button>
+        <button>back button</button>
+        <button>next button</button>
+    </ng-container>
+</transaction-summary>
+
+<!-- <ng-template #focusContent>
+    some template
+</ng-template> -->

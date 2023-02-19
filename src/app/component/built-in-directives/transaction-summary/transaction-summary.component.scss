@@ -1,0 +1,39 @@
+@import '../../../utils/ui-theme/mixins';
+@import '../../../utils/ui-theme/variables';
+
+:host ::ng-deep {
+  [uiButton='secondary'],
+  .ktb-button--secondary {
+    color: $neutrals-white;
+  }
+
+  p {
+    margin-bottom: 8px;
+    @include font-style-caption1(); //mixins
+  }
+}
+
+.action-buttons {
+  text-align: right;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.subtitle1 {
+  @include font-style-subtitle1;
+  font-weight: $font-weight-bold;
+}
+
+.h1-bold {
+  @include font-style-h1;
+  font-weight: $font-weight-bold;
+}

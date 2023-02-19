@@ -1,0 +1,13 @@
+<div>
+  <div class="page-header">
+    <div *ngIf="title">
+      <p class="subtitle1">{{ subtitle }}</p>
+      <h1 class="h1-bold">{{ title }}</h1>
+    </div>
+    <ng-content select="[slot-title]"></ng-content>
+    <div class="action-buttons">
+      <ng-content select="[action-button]"></ng-content>
+    </div>
+  </div>
+  <ng-content select="[summary-detail]"></ng-content>
+</div>

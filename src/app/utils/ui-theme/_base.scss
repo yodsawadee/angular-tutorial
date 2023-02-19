@@ -1,0 +1,39 @@
+@import './variables';
+
+:root {
+  font-size: $font-size-base;
+}
+
+body {
+  @include font-style-body3();
+  color: $neutrals-dark-grey;
+}
+
+h1 {
+  @include font-style-h1();
+}
+
+h2 {
+  @include font-style-h2();
+}
+
+h3 {
+  @include font-style-h3();
+}
+
+h4 {
+  @include font-style-h4();
+}
+
+h5 {
+  @include font-style-h5();
+}
+
+/**
+ * A lot of unstyled h6 exists on the app,
+ * enabling this could drastically change the UI
+ * TODO: requires more testing to safely enable
+ */
+// h6 {
+//   @include font-style-h6();
+// }

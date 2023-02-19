@@ -1,0 +1,102 @@
+@mixin font-style-h1() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+}
+
+@mixin font-style-h2() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+}
+
+@mixin font-style-h3() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+}
+
+@mixin font-style-h4() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-h4;
+  line-height: $line-height-h4;
+}
+
+@mixin font-style-h5() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-h5;
+  line-height: $line-height-h5;
+}
+
+@mixin font-style-h6() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-h6;
+  line-height: $line-height-h6;
+}
+
+@mixin font-style-body1() {
+  font-family: $font-family-krungthai-smart;
+  font-size: $font-size-body1;
+  line-height: $line-height-body1;
+}
+
+@mixin font-style-body2() {
+  font-family: $font-family-krungthai-smart;
+  font-size: $font-size-body2;
+  line-height: $line-height-body2;
+}
+
+@mixin font-style-body3() {
+  font-family: $font-family-krungthai-smart;
+  font-size: $font-size-body3;
+  line-height: $line-height-body3;
+}
+
+@mixin font-style-subtitle1() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-subtitle1;
+  line-height: $line-height-subtitle1;
+}
+
+@mixin font-style-subtitle2() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-subtitle2;
+  line-height: $line-height-subtitle2;
+}
+
+// @Deprecated
+@mixin font-style-label() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-label;
+  line-height: $line-height-label;
+}
+
+@mixin font-style-label1() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-label1;
+  line-height: $line-height-label1;
+}
+
+@mixin font-style-label2() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-label2;
+  line-height: $line-height-label2;
+}
+
+@mixin font-style-caption1() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-caption1;
+  line-height: $line-height-caption1;
+}
+
+@mixin font-style-caption2() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-caption2;
+  line-height: $line-height-caption1;
+}
+
+@mixin font-style-button() {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-button;
+  line-height: $line-height-button;
+}

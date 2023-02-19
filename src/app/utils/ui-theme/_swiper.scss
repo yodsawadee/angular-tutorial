@@ -1,0 +1,14 @@
+.swiper-pagination-bullets {
+  display: flex;
+  left: 24px !important;
+  bottom: 24px !important;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 1;
+
+  &.swiper-pagination-bullet-active {
+    background: $color-accent;
+  }
+}

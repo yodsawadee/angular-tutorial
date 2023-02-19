@@ -12,6 +12,8 @@ import { SendMessageComponent } from './subject/send-message/send-message.compon
 import { RecieveMessageComponent } from './subject/recieve-message/recieve-message.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ApiDataComponent } from './api-data/api-data.component';
+import { BuiltInDirectivesComponent } from './built-in-directives/built-in-directives.component';
+import { TransactionSummaryComponent } from './built-in-directives/transaction-summary/transaction-summary.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ApiDataComponent } from './api-data/api-data.component';
     SendMessageComponent,
     RecieveMessageComponent,
     ApiDataComponent,
+    BuiltInDirectivesComponent,
+    TransactionSummaryComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +38,12 @@ import { ApiDataComponent } from './api-data/api-data.component';
   providers: [],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [CurrencyConverterComponent,ReactiveFormComponent,SubjectComponent,ApiDataComponent]
+  exports: [
+    CurrencyConverterComponent,
+    ReactiveFormComponent,
+    SubjectComponent,
+    ApiDataComponent,
+    BuiltInDirectivesComponent,
+  ]
 })
 export class ComponentModule { }
