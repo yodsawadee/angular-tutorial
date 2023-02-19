@@ -21,7 +21,9 @@
     "@coreui/angular": "^4.3.11",
     "@coreui/icons-angular": "^4.3.9",
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
+    "@types/lodash-es": "^4.17.6",
     "bootstrap": "^5.2.3",
+    "lodash-es": "^4.17.21",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

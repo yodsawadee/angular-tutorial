@@ -1,3 +1,4 @@
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,7 @@ import { HelperService } from './service/helper.service';
     ComponentModule,
     HttpClientModule
   ],
-  providers: [HelperService],
+  providers: [HelperService, DecimalPipe, DatePipe],
   bootstrap: [AppComponent],
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
   exports : []

@@ -19,6 +19,9 @@ import { CustomDirectiveDirective } from './use-custom-directive/directive/custo
 import { AttributeDirectiveDirective } from './use-custom-directive/directive/attribute-directive.directive';
 import { HostListenerDirectiveDirective } from './use-custom-directive/directive/host-listener-directive.directive';
 import { HostBindingDirectiveDirective } from './use-custom-directive/directive/host-binding-directive.directive';
+import { UsePipeComponent } from './use-pipe/use-pipe.component';
+import { PercentagePipe } from './use-pipe/percentage.pipe';
+import { FilterPipe } from './use-pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { HostBindingDirectiveDirective } from './use-custom-directive/directive/
     AttributeDirectiveDirective,
     HostListenerDirectiveDirective,
     HostBindingDirectiveDirective,
+    UsePipeComponent,
+    PercentagePipe,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -54,7 +60,8 @@ import { HostBindingDirectiveDirective } from './use-custom-directive/directive/
     SubjectComponent,
     ApiDataComponent,
     BuiltInDirectivesComponent,
-    UseCustomDirectiveComponent
+    UseCustomDirectiveComponent,
+    UsePipeComponent,
   ]
 })
 export class ComponentModule { }
