@@ -3,7 +3,16 @@
 reference: https://angular.io/guide/cheatsheet
 
 ## BUILT-IN DIRECTIVES:
-1. `<section *ngIf="showSection">`
+1. 
+```
+<div *ngIf="isLoggedIn; else loggedOut">
+  Welcome back, friend.
+</div>
+
+<ng-template #loggedOut>
+  Please friend, login.
+</ng-template>
+```
 2. `<li *ngFor="let item of list">` or `<ng-container *ngFor="let item of list; let i = index; let last = last">`
 3. 
 ```
