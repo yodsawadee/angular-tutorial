@@ -10,16 +10,17 @@ import { AppComponent } from './app.component';
 import { ComponentModule } from './component/component.module';
 import { PageModule } from './page/page.module';
 import { HelperService } from './service/helper.service';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CollapseModule,

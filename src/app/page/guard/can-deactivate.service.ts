@@ -12,7 +12,7 @@ export class CanDeactivateService {
       if (observer) {
         console.log('observer=', observer)
       } else {
-        observer.next(true);
+        // observer.next(true);
       }
     });
   }

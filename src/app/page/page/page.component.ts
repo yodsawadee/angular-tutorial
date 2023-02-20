@@ -7,12 +7,15 @@ import { CanDeactivateService } from '../guard/can-deactivate.service';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent  implements OnDestroy {
-  constructor(private deactivateService: CanDeactivateService) {}
+export class PageComponent {
+  //  implements OnDestroy {
+  // constructor(private deactivateService: CanDeactivateService) {
+  //   console.log('>> PageComponent')
+  // }
 
-  ngOnDestroy() {}
+  // ngOnDestroy() {}
 
-  canDeactivate(): Observable<boolean> {
-    return this.deactivateService.canDeactivate();
-  }
+  // canDeactivate(): Observable<boolean> {
+  //   return this.deactivateService.canDeactivate();
+  // }
 }

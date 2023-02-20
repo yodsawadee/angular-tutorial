@@ -20,6 +20,7 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
     currentState: RouterStateSnapshot,
     nextState: RouterStateSnapshot
   ) {
+    alert('canDeactivate: go to '+nextState.url);
     return component.canDeactivate ? component.canDeactivate(nextState) : true;
   }
 }
