@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Page1Component } from './page1/page1.component';
-import { Page2Component } from './page2/page2.component';
-import { PageComponent } from './page/page.component';
 import { CanActivateGuard } from './guard/can-activat.guard';
 import { CanDeactivateGuard } from './guard/can-deactivate.guard';
+import { PageComponent } from './page/page.component';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
 
-// const routes: Routes = [];
 const routes: Routes = [
   {
-    path: 'page',
+    path: '',
     component: PageComponent,
     canActivate: [CanActivateGuard],
     canDeactivate: [CanDeactivateGuard],
@@ -27,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
   providers: []
 })

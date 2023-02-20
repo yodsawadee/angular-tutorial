@@ -11,6 +11,7 @@ export class CanDeactivateService {
     return new Observable<boolean>((observer) => {
       if (observer) {
         console.log('observer=', observer)
+        observer.next(true);
       } else {
         // observer.next(true);
       }

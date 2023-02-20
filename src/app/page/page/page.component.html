@@ -1,3 +1,9 @@
-<p>page works!</p>
-<a routerLink="/main"><button class="btn btn-dark">Back</button></a> 
-<a routerLink="/page/page1"><button class="btn btn-warning">Next</button></a> 
+<div *ngIf="isPage; else isInnerPage">
+    <p>page works!</p>
+    <a routerLink="/main"><button class="btn btn-dark">Back</button></a> 
+    <button class="btn btn-warning" (click)="goto()">Next to page 1</button>
+</div>
+
+<ng-template #isInnerPage>
+    <router-outlet></router-outlet>
+</ng-template>

@@ -1,6 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CanDeactivateService } from '../guard/can-deactivate.service';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-page',
@@ -8,14 +7,28 @@ import { CanDeactivateService } from '../guard/can-deactivate.service';
   styleUrls: ['./page.component.scss']
 })
 export class PageComponent {
-  //  implements OnDestroy {
-  // constructor(private deactivateService: CanDeactivateService) {
-  //   console.log('>> PageComponent')
-  // }
 
-  // ngOnDestroy() {}
+  isPage = true;
 
-  // canDeactivate(): Observable<boolean> {
-  //   return this.deactivateService.canDeactivate();
-  // }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    ) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.isPage = params['isPage']? params['isPage']: this.isPage;
+    });
+  }
+
+  goto() {
+    this.isPage = false;
+    this.router.navigate(['/page/page1'], {
+      queryParams: {
+        isPage: false
+      },
+    });
+    this.router.navigate(['/page/page1']);
+  }
+
 }
