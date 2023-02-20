@@ -5,6 +5,7 @@
 <button (click)="toggleCollapse(3)" cButton class="btn btn-warning">Built-in Directives</button>
 <button (click)="toggleCollapse(4)" cButton class="btn btn-info">Directive</button>
 <button (click)="toggleCollapse(5)" cButton class="btn btn-secondary">Pipe</button>
+<button  class="btn btn-dark" routerLink="/page">go to Page</button>
 <br/><br/>
 <div [visible]="visible[0]" cCollapse *ngIf="visible[0]"><app-currency-converter></app-currency-converter></div>
 <div [visible]="visible[1]" cCollapse *ngIf="visible[1]"><app-reactive-form></app-reactive-form></div>

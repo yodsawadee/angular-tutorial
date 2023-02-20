@@ -8,6 +8,7 @@ import { CollapseModule } from '@coreui/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentModule } from './component/component.module';
+import { PageModule } from './page/page.module';
 import { HelperService } from './service/helper.service';
 
 @NgModule({
@@ -20,9 +21,10 @@ import { HelperService } from './service/helper.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     CollapseModule,
     ComponentModule,
-    HttpClientModule
+    PageModule
   ],
   providers: [HelperService, DecimalPipe, DatePipe],
   bootstrap: [AppComponent],
