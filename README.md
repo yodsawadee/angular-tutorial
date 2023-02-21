@@ -13,7 +13,20 @@ reference: https://angular.io/guide/cheatsheet
   Please friend, login.
 </ng-template>
 ```
-2. `<li *ngFor="let item of list">` or `<ng-container *ngFor="let item of list; let i = index; let last = last">`
+2. 
+* html file: `<ng-container *ngFor="let item of items; index as i; trackBy: trackByFn">...</ng-container>`
+* typescript file: `trackByFn(index, item) { return item.accountRefId; }`
+```
+<li *ngFor="let user of users; index as i; first as isFirst">
+  {{i}}/{{users.length}}. {{user}} <span *ngIf="isFirst">default</span>
+</li>
+```
+- `index`: number: The index of the current item in the iterable.
+- `count`: number: The length of the iterable.
+- `first`: boolean: True when the item is the first item in the iterable.
+- `last`: boolean: True when the item is the last item in the iterable.
+- `even`: boolean: True when the item has an even index in the iterable.
+- `odd`: boolean: True when the item has an odd index in the iterable.
 3. 
 ```
 <div [ngSwitch]="conditionExpression">
