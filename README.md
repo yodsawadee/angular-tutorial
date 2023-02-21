@@ -116,7 +116,7 @@ __Multi-slot content projection__
 3. implements __OnInit__ : `ngOnInit()`
 > Called `once` __after the [1]constructor__, initializing input properties, and the __first/after call to [2]ngOnChanges__.
 4. implements __DoCheck__ : `ngDoCheck()`
-> Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
+> Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a __custom check__/__custom change detection__.
 5. implements __AfterContentInit__ : `ngAfterContentInit()`
 > Called `once` __after the first [4]ngDoCheck()__, after __[3]ngOnInit__ when the component's or directive's content has been initialized.
 6. implements __AfterContentChecked__ : `ngAfterContentChecked()`
