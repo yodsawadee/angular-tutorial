@@ -110,20 +110,23 @@ __Multi-slot content projection__
 
 ## DIRECTIVE AND COMPONENT CHANGE DETECTION AND LIFECYCLE HOOKS (IMPLEMENTED AS CLASS METHODS):
 1. `constructor(myService: MyService, …)`
-Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-2. `ngOnChanges(changeRecord)`
-Called after every change to input properties and before processing content or child views.
-3. `ngOnInit()`
-Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-4. `ngDoCheck()`
-Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
-5. `ngAfterContentInit()`
-Called after ngOnInit when the component's or directive's content has been initialized.
-6. `ngAfterContentChecked()`
-Called after every check of the component's or directive's content.
-7. `ngAfterViewInit()`
-Called after ngAfterContentInit when the component's views and child views / the view that a directive is in has been initialized.
-8. `ngAfterViewChecked()`
-Called after every check of the component's views and child views / the view that a directive is in.
-9. `ngOnDestroy()`
-Called once, before the instance is destroyed.
+> Called __before any other lifecycle__ hook. Use it to inject dependencies, but avoid any serious work here.
+2. implements __OnChanges__ : `ngOnChanges(changeRecord)`
+> Called __after every change to input__ properties and before processing content or child views. (if not have `@Input() myProperty;`, __ngOnChanges__ will not be called)
+3. implements __OnInit__ : `ngOnInit()`
+> Called `once` __after the [1]constructor__, initializing input properties, and the __first/after call to [2]ngOnChanges__.
+4. implements __DoCheck__ : `ngDoCheck()`
+> Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
+5. implements __AfterContentInit__ : `ngAfterContentInit()`
+> Called `once` __after the first [4]ngDoCheck()__, after __[3]ngOnInit__ when the component's or directive's content has been initialized.
+6. implements __AfterContentChecked__ : `ngAfterContentChecked()`
+> Called after every check of the component's or directive's content.
+7. implements __AfterViewInit__ : `ngAfterViewInit()`
+> Called `once` __after the first [6]ngAfterContentChecked()__, after __[5]ngAfterContentInit__ when the component's views and child views / the view that a directive is in has been initialized.
+8. implements __AfterViewChecked__ : `ngAfterViewChecked()`
+> Called __after the [7]ngAfterViewInit() and every subsequent [6]ngAfterContentChecked()__, after every check of the component's views and child views / the view that a directive is in.
+9. implements __OnDestroy__ : `ngOnDestroy()`
+> Called once, __before the instance is destroyed__.
+
+__constructor => OnChanges => OnInit => DoCheck => AfterContentInit => AfterContentChecked => AfterViewInit => AfterViewChecked =>
+DoCheck => AfterContentChecked => AfterViewChecked => OnDestroy__
