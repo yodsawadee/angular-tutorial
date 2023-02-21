@@ -100,7 +100,9 @@ __Multi-slot content projection__
 ## CLASS FIELD DECORATORS FOR DIRECTIVES AND COMPONENTS:
 `import { Input, … } from '@angular/core';`
 - `@Input() myProperty;`
+> Declares an input property that you can update using property binding (example: `<my-cmp [myProperty]="someExpression">`).
 - `@Output() myEvent = new EventEmitter();`
+> Declares an output property that fires events that you can subscribe to with an event binding (example: `<my-cmp (myEvent)="doSomething()">`).
 - `@HostBinding('class.valid') isValid;`
 - `@HostListener('click', ['$event']) onClick(e)`
 - `@ContentChild(myPredicate) myChildComponent;`
