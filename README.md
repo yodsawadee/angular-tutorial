@@ -62,11 +62,9 @@ ref: https://angular.io/guide/content-projection
 </ng-template>
 
 <ng-template #form1Body>
-  <div class="mt-12px text-data color-precious-blue" uiGrid [cols]="2" [gap]="'24px'">
-    <div *ngFor="let item of data.list">
-      <label>{{ item.label }}</label>
-      <div>{{ item.value }}</div>
-    </div>
+  <div *ngFor="let item of data.list">
+    <label>{{ item.label }}</label>
+    <div>{{ item.value }}</div>
   </div>
 </ng-template>
 ```
