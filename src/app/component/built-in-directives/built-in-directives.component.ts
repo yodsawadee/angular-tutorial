@@ -7,7 +7,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/yC-Yzbqy7PY",
-     "download_url":"https://picsum.photos/id/0/5000/3333"
+     "download_url":"https://picsum.photos/id/0/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value9" }]
   },
   {
      "id":"1",
@@ -15,7 +16,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/LNRyGwIJr5c",
-     "download_url":"https://picsum.photos/id/1/5000/3333"
+     "download_url":"https://picsum.photos/id/1/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value8" }]
   },
   {
      "id":"2",
@@ -23,7 +25,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/N7XodRrbzS0",
-     "download_url":"https://picsum.photos/id/2/5000/3333"
+     "download_url":"https://picsum.photos/id/2/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value4" }]
   },
   {
      "id":"3",
@@ -31,7 +34,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/Dl6jeyfihLk",
-     "download_url":"https://picsum.photos/id/3/5000/3333"
+     "download_url":"https://picsum.photos/id/3/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value7" }]
   },
   {
      "id":"4",
@@ -39,7 +43,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/y83Je1OC6Wc",
-     "download_url":"https://picsum.photos/id/4/5000/3333"
+     "download_url":"https://picsum.photos/id/4/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value3" }]
   },
   {
      "id":"5",
@@ -47,7 +52,8 @@ const dataList = [
      "width":5000,
      "height":3334,
      "url":"https://unsplash.com/photos/LF8gK8-HGSg",
-     "download_url":"https://picsum.photos/id/5/5000/3334"
+     "download_url":"https://picsum.photos/id/5/5000/3334",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value3" }]
   },
   {
      "id":"6",
@@ -55,7 +61,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/tAKXap853rY",
-     "download_url":"https://picsum.photos/id/6/5000/3333"
+     "download_url":"https://picsum.photos/id/6/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value3" }]
   },
   {
      "id":"7",
@@ -63,7 +70,8 @@ const dataList = [
      "width":4728,
      "height":3168,
      "url":"https://unsplash.com/photos/BbQLHCpVUqA",
-     "download_url":"https://picsum.photos/id/7/4728/3168"
+     "download_url":"https://picsum.photos/id/7/4728/3168",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value3" }]
   },
   {
      "id":"8",
@@ -71,7 +79,8 @@ const dataList = [
      "width":5000,
      "height":3333,
      "url":"https://unsplash.com/photos/xII7efH1G6o",
-     "download_url":"https://picsum.photos/id/8/5000/3333"
+     "download_url":"https://picsum.photos/id/8/5000/3333",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value3" }]
   },
   {
      "id":"9",
@@ -79,7 +88,8 @@ const dataList = [
      "width":5000,
      "height":3269,
      "url":"https://unsplash.com/photos/ABDTiLqDhJA",
-     "download_url":"https://picsum.photos/id/9/5000/3269"
+     "download_url":"https://picsum.photos/id/9/5000/3269",
+     "someList": [{ "label": "label1", "value": "value1" }, { "label": "label2", "value": "value2" }, { "label": "label3", "value": "value3" }]
   }
 ];
 export interface IPicSum {
@@ -89,6 +99,12 @@ export interface IPicSum {
    id: string;
    url: string;
    width: number;
+   someList: ISomeList[];
+}
+
+ export interface ISomeList {
+   label: string;
+   value: string;
  }
 
 export enum ETypeOfForm {
@@ -105,12 +121,12 @@ export class BuiltInDirectivesComponent implements AfterViewInit, OnInit {
 
   name: string = '';
   nameStr: any;
-  dataList: Array<Partial<IPicSum>> = dataList;
+  dataList: Partial<IPicSum>[] = dataList;
 
   title: string = '';
   subtitle: string = '';
 
-  typeOfForm: string = ETypeOfForm.FORM_1;
+  typeOfForm: string = '';
 
   @ViewChild('nameRef') nameElementRef: ElementRef;
 
@@ -122,17 +138,45 @@ export class BuiltInDirectivesComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
+
+   let str = '1234567890';
+   console.log('str', str);
+   console.log('str.substring(0,3)', str.substring(0,3)); // 123
+   console.log('str.substring(3,0)', str.substring(3,0)); // 123
+   // console.log('str.substring(3,5)', str.substring(3,5)); //45
+   // console.log('str.substring(3,5)', str.substring(7,str.length)); //890
+   console.log('str.slice(0,3)', str.slice(0,3)); //123
+   console.log('str.slice(3,0)', str.slice(3,0)); //123
+   console.log('=============================================')
+
+   let str2 = '  01 23456 789_10_01234_56 789 '
+   console.log('str2', str2)
+   console.log('str2', str2.trim().split(/[ \_]+/))
+   // console.log( " dasdnk asd, (naks) :d sk_ldma".trim().split(/[ \(,\)\:\_]+/) );
+   // console.log('str2.split( ).join(,).split(_).join(,).split(,)', str2.split(' ').join(',').split('_').join(',').split(','))
+   // console.log('"a=b,c:d".split(=).join(,).split(:).join(,).split(,)', "a=b,c:d".split('=').join(',').split(':').join(',').split(','))
+   console.log('=============================================')
+
       this.dataList = this.dataList.filter((item, index) => index % 2 !== 0)
-      .map((item:Partial<IPicSum>) => {
-         let isHaveNumAtLast = item.author?.endsWith('2');
+      .map((item) => {
+         let isHaveNumAtLast = item?.author?.endsWith('2');
          return {
             // ...item, add the rest data
-            id: '00000'+item.id,
-            download_url: item.download_url,            
+            id: '00000'+item?.id,
+            download_url: item?.download_url,            
           ...(isHaveNumAtLast
-            ? { author: item.author?.replace('Escamilla 2','==> -+-') }
-            : { author: item.author?.replace('Escamilla','<==')}
+            ? { author: item?.author?.replace('Escamilla 2','==> -+-') }
+            : { author: item?.author?.replace('Escamilla','<==')}
             ),
+            // someList: item.someList
+            someList: item?.someList?.map((it, index) => {
+               let listLength = item?.someList?.length;
+               let isLast = index+1===listLength;
+               return { 
+                  label: it.label, 
+                  ...(!isLast? {value: it.value} : {value: it.value.substring(0,it.value.length-1)+'3'}) 
+                }
+            })
          }
       })
       console.log('this.dataList', this.dataList)
@@ -146,6 +190,11 @@ export class BuiltInDirectivesComponent implements AfterViewInit, OnInit {
       console.log('dataListAfter2', dataListAfter2)
 
       this.dataList = dataListAfter2;
+
+
+      let isTrue = true; //change this to flase for testing
+      let st = [ ...(isTrue ? [ 1, 'testing'] : [2]) ];
+      console.log('st', st)
   }
 
   nameChange(evenet: any) {
@@ -166,6 +215,10 @@ export class BuiltInDirectivesComponent implements AfterViewInit, OnInit {
   }
 
   toggleForm() {
-   this.typeOfForm = this.typeOfForm === ETypeOfForm.FORM_1 ? ETypeOfForm.FORM_2 : ETypeOfForm.FORM_1;
+   if(this.typeOfForm) {
+      this.typeOfForm = this.typeOfForm === ETypeOfForm.FORM_1 ? ETypeOfForm.FORM_2 : ETypeOfForm.FORM_1;
+   } else {
+      this.typeOfForm = ETypeOfForm.FORM_1;
+   }
   }
 }

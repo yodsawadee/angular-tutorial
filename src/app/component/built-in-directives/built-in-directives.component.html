@@ -36,8 +36,10 @@ subtitle: <input type="text" [ngModel]="subtitle" (ngModelChange)="subtitleChang
 
 <ng-template #detailsBody>
     <ng-container [ngSwitch]="typeOfForm">
-        <ng-container *ngSwitchCase="'form1'" [ngTemplateOutlet]="form1Body"></ng-container>
-        <ng-container *ngSwitchCase="'form2'" [ngTemplateOutlet]="form2Body"></ng-container>
+        <!-- <ng-container *ngSwitchCase="'form1'" [ngTemplateOutlet]="form1Body"></ng-container> -->
+        <ng-template *ngSwitchCase="'form1'" [ngTemplateOutlet]="form1Body"></ng-template>
+        <ng-template *ngSwitchCase="'form2'" [ngTemplateOutlet]="form2Body"></ng-template>
+        <ng-template ngSwitchDefault>default form</ng-template> 
     </ng-container>
 </ng-template>
 
