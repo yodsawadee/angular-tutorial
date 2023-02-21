@@ -93,9 +93,9 @@ __Multi-slot content projection__
 ## CLASS DECORATORS:
 `import { Directive, … } from '@angular/core';`
 - `@Component`
-- `@Injectable` defines a class as a service
-- `@Directive` are defined as classes that can add new behavior to the elements in the template or modify existing behavior. The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to DOM or removing elements and even changing the appearance of the DOM elements.
-- `@Pipe` a simple way to transform values in an Angular template.
+- `@Injectable` defines a class as a __service__
+- `@Directive` are defined as classes that can __add new behavior to the elements in the template or modify existing behavior__. The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to DOM or removing elements and even changing the appearance of the DOM elements.
+- `@Pipe` a simple way to __transform values__ in an Angular template.
 
 ## CLASS FIELD DECORATORS FOR DIRECTIVES AND COMPONENTS:
 `import { Input, … } from '@angular/core';`
