@@ -40,6 +40,8 @@ export class HelperService implements OnDestroy {
     });
   }
 
+  // ==============================================================================================
+  // private subject$ = new Subject<string>();
   sendMessage(msg: string) {
     this.subject$.next(msg);
     this.behaviorSubject$.next(msg);
@@ -48,6 +50,10 @@ export class HelperService implements OnDestroy {
   recieveMessage(): Observable<string> {
     return this.subject$.asObservable();
   }
+  recieveMessageFromBehaviorSubject(): Observable<string> {
+    return this.behaviorSubject$.asObservable();
+  }
+  // ==============================================================================================
 
   textDisplay(value: string): string {
     return value || '-';

@@ -1,6 +1,13 @@
 @import '../../../utils/ui-theme/mixins';
 @import '../../../utils/ui-theme/variables';
 
+.container {
+  border: 2px solid $alert;
+    border-radius: 10px;
+    padding: 4vh;
+    margin: 4vw;
+}
+
 :host ::ng-deep {
   [uiButton='secondary'],
   .ktb-button--secondary {

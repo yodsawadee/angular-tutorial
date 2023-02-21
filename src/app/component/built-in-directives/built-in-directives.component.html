@@ -1,15 +1,27 @@
-<input type="text" [ngModel]="name" (ngModelChange)="nameChange($event)" #nameRef><br/>
-<div *ngIf="nameStr?.length > 0">name: {{nameStr}}</div>
-<br/><br/>
+<textarea rows={{2}} cols={{80}} placeholder="Enter name" 
+    [ngModel]="name" (ngModelChange)="nameChange($event)" #nameRef
+  >
+</textarea><br/>
+<span *ngIf="nameStr?.length > 0; else noNameInput">Result: {{nameStr}}</span>
+<ng-template #noNameInput>Name is not yet enter</ng-template>
+<br/>
 
-<span *ngFor="let data of dataList">
-    <li >{{data.id}} | {{data.download_url}}</li>
-    <img src="{{data.download_url}}" width="500">
-</span>
+<br/>========================================================<br/>
+<ng-container *ngTemplateOutlet="detailsBody"></ng-container>
+&nbsp;<button (click)="toggleForm()" class="btn btn-primary">Switch Form</button>
+<br/>========================================================<br/>
+reuse content: <ng-container *ngTemplateOutlet="detailsBody"></ng-container>
+<br/>========================================================<br/><br/>
 
-<transaction-summary [title]="'title'" [subtitle]="'subtitle'">
+title: <input type="text" [ngModel]="title" (ngModelChange)="titleChange($event)">
+subtitle: <input type="text" [ngModel]="subtitle" (ngModelChange)="subtitleChange($event)">
+
+<transaction-summary [title]="title" [subtitle]="subtitle">
+    <ng-container slot-title>
+        slot-title content
+    </ng-container>
     <ng-container summary-detail>
-        summary-detail contect
+        summary-detail content
     </ng-container>
     <ng-container action-button>
         <button>back button</button>
@@ -17,6 +29,17 @@
     </ng-container>
 </transaction-summary>
 
-<!-- <ng-template #focusContent>
-    some template
-</ng-template> -->
+<span *ngFor="let data of dataList; index as i; trackBy: trackByFn">
+    <li >index:{{i}} => {{data.author}}</li>
+    <!-- <img src="{{data.download_url}}" width="500"> -->
+</span>
+
+<ng-template #detailsBody>
+    <ng-container [ngSwitch]="typeOfForm">
+        <ng-container *ngSwitchCase="'form1'" [ngTemplateOutlet]="form1Body"></ng-container>
+        <ng-container *ngSwitchCase="'form2'" [ngTemplateOutlet]="form2Body"></ng-container>
+    </ng-container>
+</ng-template>
+
+<ng-template #form1Body>FORM 1</ng-template>
+<ng-template #form2Body>FORM 2</ng-template>
