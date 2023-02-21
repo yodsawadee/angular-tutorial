@@ -3,7 +3,7 @@
 reference: https://angular.io/guide/cheatsheet
 
 ## BUILT-IN DIRECTIVES:
-1. 
+1. __ngIf__
 ```
 <div *ngIf="isLoggedIn; else loggedOut">
   Welcome back, friend.
@@ -13,7 +13,7 @@ reference: https://angular.io/guide/cheatsheet
   Please friend, login.
 </ng-template>
 ```
-2. 
+2. __ngFor__
 * html file: `<ng-container *ngFor="let item of items; index as i; trackBy: trackByFn">...</ng-container>`
 * typescript file: `trackByFn(index, item) { return item.accountRefId; }`
 ```
@@ -27,7 +27,7 @@ reference: https://angular.io/guide/cheatsheet
 - `last`: boolean: True when the item is the last item in the iterable.
 - `even`: boolean: True when the item has an even index in the iterable.
 - `odd`: boolean: True when the item has an odd index in the iterable.
-3. 
+3.  __ngSwitch__
 ```
 <div [ngSwitch]="conditionExpression">
     <ng-template [ngSwitchCase]="case1Exp"> 
@@ -41,9 +41,16 @@ reference: https://angular.io/guide/cheatsheet
     </ng-template> 
 </div>
 ```
-4. `<div [ngClass]="condition ? 'filled' : 'not-fill'">` or `<div [ngClass]="{'checkbox-active': isSelectedAllAccount || isIndeterminate, 'disabled': isDisabled}">`
-5. `<div [ngStyle]="{'pointer-events': condition ? 'none' : 'unset'}">` or `<div [ngStyle]="{'property': 'value'}">` or `<div [ngStyle]="dynamicStyles()">`
-6.
+4. __ngClass__
+- `<div [ngClass]="condition ? 'filled' : 'not-fill'">`
+- `<div [ngClass]="{'checkbox-active': isSelectedAllAccount || isIndeterminate, 'disabled': isDisabled}">`
+5. __ngClass__
+- `<div [ngStyle]="{'pointer-events': condition ? 'none' : 'unset'}">`
+- `<div [ngStyle]="{'property': 'value'}">`
+- `<div [ngStyle]="dynamicStyles()">`
+
+### Content projection 
+ref: https://angular.io/guide/content-projection
 ```
 <ng-container *ngTemplateOutlet="detailsBody"></ng-container>
 
@@ -62,6 +69,27 @@ reference: https://angular.io/guide/cheatsheet
     </div>
   </div>
 </ng-template>
+```
+__Multi-slot content projection__
+```
+  selector: 'app-zippy-multislot',
+  template: `
+    <h2>Multi-slot content projection</h2>
+
+    Default:
+    <ng-content></ng-content>
+
+    Question:
+    <ng-content select="[question]"></ng-content>
+  `
+```
+```
+<app-zippy-multislot>
+  <p question>
+    Is content projection cool?
+  </p>
+  <p>Let's learn about content projection!</p>
+</app-zippy-multislot>
 ```
 
 ## CLASS DECORATORS:
