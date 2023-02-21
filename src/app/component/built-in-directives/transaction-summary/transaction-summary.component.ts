@@ -17,11 +17,13 @@ export class TransactionSummaryComponent implements OnInit, OnChanges, DoCheck {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes)
+    this.title = this.title ? this.title: 'title';
+    this.subtitle = this.subtitle ? this.subtitle: 'subtitle';
   }
 
   ngDoCheck(): void {
     console.log('ngDoCheck')
-    this.title = this.title ? this.title: 'title';
-    this.subtitle = this.subtitle ? this.subtitle: 'subtitle';
+    // this.title = this.title ? this.title: 'title';
+    // this.subtitle = this.subtitle ? this.subtitle: 'subtitle';
   }
 }
