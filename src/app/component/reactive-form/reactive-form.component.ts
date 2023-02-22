@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -20,13 +20,25 @@ export class ReactiveFormComponent {
 
   cardNumberModel: string = '';
 
-  public form: FormGroup = new FormGroup({
+  form: FormGroup;
+
+//   public form: FormGroup = new FormGroup({
+//     cardNumber: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.cardNumberLength)]),
+//     cardholderName: new FormControl('', [Validators.required, Validators.pattern(new RegExp(/^[A-Za-z\-\ ]+$/))]),
+//     month: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.monthLength), this.rangeValidator(this.validatorOptions.minMonth, this.validatorOptions.maxMonth)]),
+//     year: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.yearLength), this.rangeValidator(this.validatorOptions.currentYear, this.validatorOptions.maxYear)]),
+//     cvv: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.cvvLength)]),
+//  });
+
+ constructor(private fb: FormBuilder) {
+  this.form = this.fb.group({
     cardNumber: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.cardNumberLength)]),
     cardholderName: new FormControl('', [Validators.required, Validators.pattern(new RegExp(/^[A-Za-z\-\ ]+$/))]),
     month: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.monthLength), this.rangeValidator(this.validatorOptions.minMonth, this.validatorOptions.maxMonth)]),
     year: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.yearLength), this.rangeValidator(this.validatorOptions.currentYear, this.validatorOptions.maxYear)]),
     cvv: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.cvvLength)]),
- });
+  });
+ }
 
  ngOnInit() { 
     this.form.valueChanges.subscribe(it => {
@@ -44,7 +56,7 @@ export class ReactiveFormComponent {
 
   submit() {
     if (this.form.valid) {
-      // console.log(this.form.value)
+      console.log(this.form.value)
       // this.submitForm.emit(this.form.value);
     }
   }

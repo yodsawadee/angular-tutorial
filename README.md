@@ -44,7 +44,7 @@ reference: https://angular.io/guide/cheatsheet
 4. __ngClass__
 - `<div [ngClass]="condition ? 'filled' : 'not-fill'">`
 - `<div [ngClass]="{'checkbox-active': isSelectedAllAccount || isIndeterminate, 'disabled': isDisabled}">`
-5. __ngClass__
+5. __ngStyle__
 - `<div [ngStyle]="{'pointer-events': condition ? 'none' : 'unset'}">`
 - `<div [ngStyle]="{'property': 'value'}">`
 - `<div [ngStyle]="dynamicStyles()">`
