@@ -1,13 +1,13 @@
 - __HTTP__ transfer data as plain text, port 80 or 8080 can receive them on the web server
-- __HTTPS protocol__ transfers encrypted data(normal HTTP requests and responses) to port 443 by using SSL/TLS encryption
-An SSL certificate is a data file(contain the website's `public key` and the website's identity) hosted in a website's origin server that authenticates a website's identity and enables an encrypted connection 
+- __HTTPS protocol__ transfers encrypted data(normal HTTP requests and responses) to port 443 by using SSL/TLS encryption.
+An SSL certificate is a data file(contain the website's `public key` and the website's identity) hosted in a website's origin server that authenticates a website's identity and enables an encrypted connection.
 `private key` is stored on the server and kept secret for decrypted the data
-
+---
 - __Asymmetric encryption__, data __encrypted__ with the `public key` can only be __decrypted__ with the `private key` 
 - __Symmetric encryption__ uses one key(secret key/ private key) to encrypt and decrypt
-
+---
 - __HTTP cookies__ are small blocks of data(often including unique identifiers) created by a web server send to browsers while a user is browsing a website and placed on the user's computer during a session. then if user get back to this website it will use cookies to access and maybe get the user's interested topic as an abvertisment.
-
+---
 # Angular Tutorial
 
 reference: https://angular.io/guide/cheatsheet
