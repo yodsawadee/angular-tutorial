@@ -15,6 +15,7 @@ reference:
 - https://angular.io/guide/architecture-components
 
 ## Data binding
+https://angular.io/guide/binding-syntax<br/>
 ![databinding](https://user-images.githubusercontent.com/23036784/226532094-88f16ccb-856e-4737-bfb7-acc76e01c22f.png)
 
 src/app/hero-list.component.html (binding)
