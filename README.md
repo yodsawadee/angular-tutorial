@@ -12,6 +12,28 @@ An SSL certificate is a data file(contain the website's `public key` and the web
 
 reference: https://angular.io/guide/cheatsheet
 
+## Data binding
+![databinding](https://user-images.githubusercontent.com/23036784/226532094-88f16ccb-856e-4737-bfb7-acc76e01c22f.png)
+
+src/app/hero-list.component.html (binding)
+```
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<button type="button" (click)="selectHero(hero)">
+  {{hero.name}}
+</button>
+```
+src/app/hero-detail.component.html (ngModel)
+```
+<input type="text" id="hero-name" [(ngModel)]="hero.name">
+```
+
+
+| CATEGORY | TYPE | SYNTAX | Example | DETAILS |
+| --- | :--- | :--- | :--- | :--- |
+| **One-way**: data source -> view target | - **Interpolation**<br/>- **Property, Attribute, Class, Style binding** | - `{{expression}}`<br/>- `[target]="expression"` | - `{{hero.name}}`<br/>- `[hero]` | - Displays the component's `hero.name` property value<br/>- Passes the value of `selectedHero` from the parent `HeroListComponent` to the `hero` property of the child `HeroDetailComponent`. |
+| **One-way**: view target -> data source | **Event binding** | `(target)="statement"` | `(click)` | Calls the component's `selectHero` method when the user clicks a hero's name. |
+| **Two-way**: sequence of view -> source -> view | **Two-way** | `[(target)]="expression"` | `[(ngModel)]="hero.name"` | Two-way data binding (used mainly in **template-driven forms**) combines property and event binding in a single notation using `ngModel` directive, a data property value flows to the input box from the component as with property binding. The user's changes also flow back to the component, resetting the property to the latest value, as with event binding. ![component-databinding](https://user-images.githubusercontent.com/23036784/226532892-d544c1cb-88e0-44b2-984a-843e37a71548.png) |
+
 ## BUILT-IN DIRECTIVES:
 1. __ngIf__
 ```
