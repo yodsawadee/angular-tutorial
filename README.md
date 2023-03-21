@@ -10,7 +10,9 @@ An SSL certificate is a data file(contain the website's `public key` and the web
 ---
 # Angular Tutorial
 
-reference: https://angular.io/guide/cheatsheet
+reference: 
+- https://angular.io/guide/cheatsheet
+- https://angular.io/guide/architecture-components
 
 ## Data binding
 ![databinding](https://user-images.githubusercontent.com/23036784/226532094-88f16ccb-856e-4737-bfb7-acc76e01c22f.png)
@@ -26,8 +28,6 @@ src/app/hero-detail.component.html (ngModel)
 ```
 <input type="text" id="hero-name" [(ngModel)]="hero.name">
 ```
-
-
 | CATEGORY | TYPE | SYNTAX | Example | DETAILS |
 | --- | :--- | :--- | :--- | :--- |
 | **One-way**: data source -> view target | - **Interpolation**<br/>- **Property, Attribute, Class, Style binding** | - `{{expression}}`<br/>- `[target]="expression"` | - `{{hero.name}}`<br/>- `[hero]` | - Displays the component's `hero.name` property value<br/>- Passes the value of `selectedHero` from the parent `HeroListComponent` to the `hero` property of the child `HeroDetailComponent`. |
@@ -38,15 +38,20 @@ src/app/hero-detail.component.html (ngModel)
 `import { Directive, … } from '@angular/core';`
 | DECORATORS | DETAILS |
 | --- | :--- |
-| `@Component` |  |
+| `@Component` | ![metadata](https://user-images.githubusercontent.com/23036784/226540111-26ebeffb-3613-415c-bd79-730882a7cd72.png) |
 | `@Injectable` | defines a class as a __service__ |
 | `@Pipe` | a way to __transform display-values__ in an Angular template HTML. |
-| `@Directive` | __template-oriented features__: <br/>- Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives.<br/>- Are defined as classes that can __add new behavior to the elements in the template or modify existing behavior__. The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to DOM or removing elements and even changing the appearance of the DOM elements. |
+| `@Directive` | ![directive](https://user-images.githubusercontent.com/23036784/226540170-72a82a25-e3f8-42b0-a820-a00c74157105.png) <br/>__template-oriented features__: <br/>- Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives.<br/>- Are defined as classes that can __add new behavior to the elements in the template or modify existing behavior__. The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to DOM or removing elements and even changing the appearance of the DOM elements. |
 
 __Pipe syntax__: `{{interpolated_value | pipe_name}}`<br/><br/>
 __Directive__:<br/>
 - __Structural directives__: alter layout by __adding__, __removing__, and __replacing__ elements in the DOM. eg. `*ngFor`, `*ngIf`<br/>
-- __Attribute directives__: alter the appearance or behavior of an __existing__ element.  eg. `ngModel`
+- __Attribute directives__: alter the appearance or behavior of an __existing__ element.  eg. `ngModel`<br/><br/>
+
+__Templates and views__
+![template](https://user-images.githubusercontent.com/23036784/226540905-32f20b69-c0a2-41f2-9704-5f23634872bd.png) <br/>
+- __Template__ is a form of HTML<br/>
+- __Views__ are typically organized hierarchically, allowing to modify or show and hide entire UI sections or pages as a unit. <br/>The template immediately associated with a component defines that component's host view. <br/>The component can also define a view hierarchy, which contains embedded views, hosted by other components.
 
 ## BUILT-IN DIRECTIVES:
 1. __ngIf__
