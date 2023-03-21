@@ -192,4 +192,9 @@ https://www.infragistics.com/community/blogs/b/infragistics/posts/angular-async-
 | Are lazy, i.e., the producer function triggers after users subscribe to the stream  | Are eager, i.e., the Promise callback executes immediately and only once at the moment of its definition, without .then and .catch  |
 | Subscribers handle errors | Push errors to the child Promises <br/> Error handling is done using .then() and catch() methods | Error handling is done using try() and catch() methods |
 |  | It could be difficult to understand promise chains  sometimes | Async and await makes the code easier to read and understand the flow of the program |
-|  | It has 3 states – pending, resolved and rejected | It returns a promise either resolved or rejected |
+| next, error, complete | It has 3 states – pending, resolved and rejected | It returns a promise either resolved or rejected |
+
+__Observable__: unicast (each subscribed observer owns an indepenent excution of the observable)<br/>
+__Special Type of Observable__: allows value to be multicasted to many observers<br/>
+- __Subject__: use when u want updates as they come
+- __Behavior Subject__: store current value (can initiallize) - use when u want the latest update as soon as they subscribe
