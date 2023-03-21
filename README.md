@@ -34,6 +34,20 @@ src/app/hero-detail.component.html (ngModel)
 | **One-way**: view target -> data source | **Event binding** | `(target)="statement"` | `(click)` | Calls the component's `selectHero` method when the user clicks a hero's name. |
 | **Two-way**: sequence of view -> source -> view | **Two-way** | `[(target)]="expression"` | `[(ngModel)]="hero.name"` | Two-way data binding (used mainly in **template-driven forms**) combines property and event binding in a single notation using `ngModel` directive, a data property value flows to the input box from the component as with property binding. The user's changes also flow back to the component, resetting the property to the latest value, as with event binding. ![component-databinding](https://user-images.githubusercontent.com/23036784/226532892-d544c1cb-88e0-44b2-984a-843e37a71548.png) |
 
+## CLASS DECORATORS:
+`import { Directive, … } from '@angular/core';`
+| DECORATORS | DETAILS |
+| --- | :--- |
+| `@Component` |  |
+| `@Injectable` | defines a class as a __service__ |
+| `@Pipe` | a way to __transform display-values__ in an Angular template HTML. |
+| `@Directive` | __template-oriented features__: <br/>- Angular templates are dynamic. When Angular renders them, it transforms the DOM according to the instructions given by directives.<br/>- Are defined as classes that can __add new behavior to the elements in the template or modify existing behavior__. The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to DOM or removing elements and even changing the appearance of the DOM elements. |
+
+__Pipe syntax__: `{{interpolated_value | pipe_name}}`<br/><br/>
+__Directive__:<br/>
+- __Structural directives__: alter layout by __adding__, __removing__, and __replacing__ elements in the DOM. eg. `*ngFor`, `*ngIf`<br/>
+- __Attribute directives__: alter the appearance or behavior of an __existing__ element.  eg. `ngModel`
+
 ## BUILT-IN DIRECTIVES:
 1. __ngIf__
 ```
@@ -121,13 +135,6 @@ __Multi-slot content projection__
   <p>Let's learn about content projection!</p>
 </app-zippy-multislot>
 ```
-
-## CLASS DECORATORS:
-`import { Directive, … } from '@angular/core';`
-- `@Component`
-- `@Injectable` defines a class as a __service__
-- `@Directive` are defined as classes that can __add new behavior to the elements in the template or modify existing behavior__. The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to DOM or removing elements and even changing the appearance of the DOM elements.
-- `@Pipe` a simple way to __transform values__ in an Angular template.
 
 ## CLASS FIELD DECORATORS FOR DIRECTIVES AND COMPONENTS:
 `import { Input, … } from '@angular/core';`
