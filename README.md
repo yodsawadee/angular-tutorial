@@ -177,3 +177,19 @@ __Multi-slot content projection__
 
 __constructor => OnChanges => OnInit => DoCheck => AfterContentInit => AfterContentChecked => AfterViewInit => AfterViewChecked =>
 DoCheck => AfterContentChecked => AfterViewChecked => OnDestroy__
+
+
+## types of data management
+__Observable__ vs __Promise__ + Async/Await
+https://www.infragistics.com/community/blogs/b/infragistics/posts/angular-async-await <br/>
+| Observable | Promise | Async/Await |
+| :--- | :--- | :--- |
+| Can handle both synchronous and asynchronous events | Can only handle asynchronous data returns <br/> Promise is an operation which is guaranteed to complete its execution at some point in the future | Async/Await is built on top of promises. They are syntactic sugar for promises, making the code look more synchronous  |
+| Emit and complete 0, 1, or multiple values over a period of time (stream data in multiple pipeline) | Only emit one value at a time (have one pipeline) |
+| Less passive, meaning | More passive, meaning |
+| Offer operations like map, filter, reduce, retry(), or replay(), map, forEach, and more | Do not provide operators |
+| Are cancellable, using the unsubscribe() method, meaning the listener doesn’t receive further values  | Are not cancellable |
+| Are lazy, i.e., the producer function triggers after users subscribe to the stream  | Are eager, i.e., the Promise callback executes immediately and only once at the moment of its definition, without .then and .catch  |
+| Subscribers handle errors | Push errors to the child Promises <br/> Error handling is done using .then() and catch() methods | Error handling is done using try() and catch() methods |
+|  | It could be difficult to understand promise chains  sometimes | Async and await makes the code easier to read and understand the flow of the program |
+|  | It has 3 states – pending, resolved and rejected | It returns a promise either resolved or rejected |
