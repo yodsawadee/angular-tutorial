@@ -157,44 +157,45 @@ export class BuiltInDirectivesComponent implements AfterViewInit, OnInit {
    // console.log('"a=b,c:d".split(=).join(,).split(:).join(,).split(,)', "a=b,c:d".split('=').join(',').split(':').join(',').split(','))
    console.log('=============================================')
 
-      this.dataList = this.dataList.filter((item, index) => index % 2 !== 0)
-      .map((item) => {
-         let isHaveNumAtLast = item?.author?.endsWith('2');
-         return {
-            // ...item, add the rest data
-            id: '00000'+item?.id,
-            download_url: item?.download_url,            
-          ...(isHaveNumAtLast
-            ? { author: item?.author?.replace('Escamilla 2','==> -+-') }
-            : { author: item?.author?.replace('Escamilla','<==')}
-            ),
-            // someList: item.someList
-            someList: item?.someList?.map((it, index) => {
-               let listLength = item?.someList?.length;
-               let isLast = index+1===listLength;
-               return { 
-                  label: it.label, 
-                  ...(!isLast? {value: it.value} : {value: it.value.substring(0,it.value.length-1)+'3'}) 
-                }
-            })
-         }
-      })
-      console.log('this.dataList', this.dataList)
+   console.log('original dataList', this.dataList)
+   this.dataList = this.dataList.filter((item, index) => index % 2 !== 0)
+   .map((item) => {
+      let isHaveNumAtLast = item?.author?.endsWith('2');
+      return {
+         // ...item, add the rest data
+         id: '00000'+item?.id,
+         download_url: item?.download_url,            
+         ...(isHaveNumAtLast
+         ? { author: item?.author?.replace('Escamilla 2','==> -+-') }
+         : { author: item?.author?.replace('Escamilla','<==')}
+         ),
+         // someList: item.someList
+         someList: item?.someList?.map((it, index) => {
+            let listLength = item?.someList?.length;
+            let isLast = index+1===listLength;
+            return { 
+               label: it.label, 
+               ...(!isLast? {value: it.value} : {value: it.value.substring(0,it.value.length-1)+'3'}) 
+               }
+         })
+      }
+   })
+   console.log('this.dataList', this.dataList)
 
-      const newDate = { id: this.dataList.length.toString(), author: 'janny' }
-      const dataListAfter = [...this.dataList, newDate];
-      console.log('dataListAfter', dataListAfter)
-      
-      const newDate2 = [{ id: dataListAfter.length.toString(), author: 'jan yod' }]
-      const dataListAfter2 = [...dataListAfter, ...newDate2];
-      console.log('dataListAfter2', dataListAfter2)
+   const newDate = { id: this.dataList.length.toString(), author: 'janny' }
+   const dataListAfter = [...this.dataList, newDate];
+   console.log('dataListAfter', dataListAfter)
+   
+   const newDate2 = [{ id: dataListAfter.length.toString(), author: 'jan yod' }]
+   const dataListAfter2 = [...dataListAfter, ...newDate2];
+   console.log('dataListAfter2', dataListAfter2)
 
-      this.dataList = dataListAfter2;
+   this.dataList = dataListAfter2;
 
 
-      let isTrue = true; //change this to flase for testing
-      let st = [ ...(isTrue ? [ 1, 'testing'] : [2]) ];
-      console.log('st', st)
+   let isTrue = true; //change this to flase for testing
+   let st = [ ...(isTrue ? [ 1, 'testing'] : [2]) ];
+   console.log('st', st)
   }
 
   nameChange(evenet: any) {
