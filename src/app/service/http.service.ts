@@ -19,16 +19,19 @@ export interface IStory {
   author: string;
   img: string;
 }
+export interface TableOption {
+  pageNumber: number
+  pageSize: number
+  sortDirection: string;
+  sortProperties: string[];
+}
 
 export interface StoryReq {
   id: number
   title: string;
   body: string;
   author: string;
-  page: number;
-  size: number;
-  sort: string;
-  order: string;
+  tableOption: TableOption;
 }
 
 @Injectable({
@@ -68,15 +71,14 @@ export class HttpService {
     // http://localhost:8080/jpa/story/get?id=14&title=voluptatem&body=fuga&author=Paul&page=1&size=5&sort=id&order=DESC
     let url = 'http://localhost:8080/jpa/story/get?';
     if (storyReq.id > 0) url += 'id='+storyReq.id+'&';
-    
     if (storyReq.title) url += 'title='+storyReq.title+'&';
     if (storyReq.body) url += 'body='+storyReq.body+'&';
     if (storyReq.author) url += 'author='+storyReq.author+'&';
 
-    if (storyReq.page > 0) url += 'page='+storyReq.page+'&';
-    if (storyReq.size > 0) url += 'size='+storyReq.size+'&';
-    if (storyReq.sort) url += 'sort='+storyReq.sort+'&';
-    if (storyReq.order) url += 'order='+storyReq.order;
+    url += 'page='+storyReq.tableOption.pageNumber+'&';
+    url += 'size='+storyReq.tableOption.pageSize+'&';
+    url += 'sort='+storyReq.tableOption.sortProperties+'&';
+    url += 'order='+storyReq.tableOption.sortDirection;
     console.log('final url=',url)
     return this.httpClient.get(url);
   }
