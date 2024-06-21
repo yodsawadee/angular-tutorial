@@ -1,0 +1,17 @@
+.mat-mdc-header-row {
+    background-color: #cccfe9;
+}
+
+.mat-column-position {
+    flex: none;
+    width: 1rem;
+    background-color: #F2DCD3;
+}
+
+.mat-mdc-row:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.mat-mdc-row:nth-child(odd) {
+    background-color: #ffffff;
+}

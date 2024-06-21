@@ -12,6 +12,9 @@ import { PageModule } from './page/page.module';
 import { HelperService } from './service/helper.service';
 import { MainComponent } from './main/main.component';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,9 @@ import { MainComponent } from './main/main.component';
     HttpClientModule,
     CollapseModule,
     ComponentModule,
-    PageModule
+    PageModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [HelperService, DecimalPipe, DatePipe],
   bootstrap: [AppComponent],

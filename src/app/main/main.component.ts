@@ -10,7 +10,7 @@ import { HelperService } from '../service/helper.service';
   providers: [HelperService]
 })
 export class MainComponent implements OnInit {
-  visible = [false, false, false, false, false, false, false];
+  visible = [false, false, false, false, false, false, false, true];
 
   someVar$ = new Subject<number>;
 
@@ -19,31 +19,31 @@ export class MainComponent implements OnInit {
     private router: Router
     ) { }
 
-  solutionOddOccurrencesInArray(A: number[]):number {
-      //{3: 2, 7: 1, 9: 4}
-      let map = new Map<number, number>();
-      for (let i = 0; i < A.length; i++) {
-        let currentItem = A[i];
-        if (map.has(currentItem)) {
-          let valOfcurrentItem:any = map.get(currentItem);
-          map.set(currentItem, valOfcurrentItem + 1);
-        } else {
-          map.set(currentItem, 1);
-        }
-      }
-      console.log(map)
-      let res = 0;
-      for (let entry of map.entries()) {
-        // console.log(entry[0], entry[1]);   
-        if(entry[1]===1) {
-          res = entry[0];
-        } 
-      }
-      return res;
-    }
+  // solutionOddOccurrencesInArray(A: number[]):number {
+  //     //{3: 2, 7: 1, 9: 4}
+  //     let map = new Map<number, number>();
+  //     for (let i = 0; i < A.length; i++) {
+  //       let currentItem = A[i];
+  //       if (map.has(currentItem)) {
+  //         let valOfcurrentItem:any = map.get(currentItem);
+  //         map.set(currentItem, valOfcurrentItem + 1);
+  //       } else {
+  //         map.set(currentItem, 1);
+  //       }
+  //     }
+  //     console.log(map)
+  //     let res = 0;
+  //     for (let entry of map.entries()) {
+  //       // console.log(entry[0], entry[1]);   
+  //       if(entry[1]===1) {
+  //         res = entry[0];
+  //       } 
+  //     }
+  //     return res;
+  //   }
 
   ngOnInit() { 
-    console.log(this.solutionOddOccurrencesInArray([9, 3, 9,3,9,7,9]));
+    // console.log(this.solutionOddOccurrencesInArray([9, 3, 9,3,9,7,9]));
 
     this.helperService.someVar = 100;
 

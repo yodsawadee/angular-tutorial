@@ -22,6 +22,10 @@ import { HostBindingDirectiveDirective } from './use-custom-directive/directive/
 import { UsePipeComponent } from './use-pipe/use-pipe.component';
 import { PercentagePipe } from './use-pipe/percentage.pipe';
 import { FilterPipe } from './use-pipe/filter.pipe';
+import { TableComponent } from './table/table.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -43,13 +47,17 @@ import { FilterPipe } from './use-pipe/filter.pipe';
     HostBindingDirectiveDirective,
     UsePipeComponent,
     PercentagePipe,
-    FilterPipe
+    FilterPipe,
+    TableComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -62,6 +70,7 @@ import { FilterPipe } from './use-pipe/filter.pipe';
     BuiltInDirectivesComponent,
     UseCustomDirectiveComponent,
     UsePipeComponent,
+    TableComponent,
   ]
 })
 export class ComponentModule { }

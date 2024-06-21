@@ -12,6 +12,25 @@ export interface IPicSum {
   width: number;
 }
 
+export interface IStory {
+  id: string
+  title: string;
+  body: string;
+  author: string;
+  img: string;
+}
+
+export interface StoryReq {
+  id: number
+  title: string;
+  body: string;
+  author: string;
+  page: number;
+  size: number;
+  sort: string;
+  order: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -39,5 +58,26 @@ export class HttpService {
 
   async getTodos(): Promise<any> {
     return await this.httpClient.get('https:jsonplaceholder.typicode.com/todos/1').toPromise();
+  }
+
+  getAllStory(): Observable<any> {
+    return this.httpClient.get('http://localhost:8080/jpa/story/getAll');
+  }
+
+  getStory(storyReq: StoryReq): Observable<any> {
+    // http://localhost:8080/jpa/story/get?id=14&title=voluptatem&body=fuga&author=Paul&page=1&size=5&sort=id&order=DESC
+    let url = 'http://localhost:8080/jpa/story/get?';
+    if (storyReq.id > 0) url += 'id='+storyReq.id+'&';
+    
+    if (storyReq.title) url += 'title='+storyReq.title+'&';
+    if (storyReq.body) url += 'body='+storyReq.body+'&';
+    if (storyReq.author) url += 'author='+storyReq.author+'&';
+
+    if (storyReq.page > 0) url += 'page='+storyReq.page+'&';
+    if (storyReq.size > 0) url += 'size='+storyReq.size+'&';
+    if (storyReq.sort) url += 'sort='+storyReq.sort+'&';
+    if (storyReq.order) url += 'order='+storyReq.order;
+    console.log('final url=',url)
+    return this.httpClient.get(url);
   }
 }
