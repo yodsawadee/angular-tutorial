@@ -29,6 +29,8 @@ export class TableComponent implements AfterViewInit, OnInit {
   body: string;
   author: string;
 
+  isEmptyList = true;
+  displaySearchResultTxt = false;
   form: FormGroup;
 
   constructor(private httpService: HttpService, private fb: FormBuilder) {}
@@ -58,7 +60,14 @@ export class TableComponent implements AfterViewInit, OnInit {
     this.apiResponse = this.httpService.getStory(req).subscribe((it) => {
       this.apiResponse = it;
       console.log('apiResponse',this.apiResponse)
-      this.dataSource = this.apiResponse.content;
+      if (this.apiResponse?.content?.length > 0) {
+        this.dataSource = new MatTableDataSource<any>(this.apiResponse.content);
+        this.isEmptyList = false;
+        this.displaySearchResultTxt = false;
+      } else {
+        this.isEmptyList = true;
+        this.displaySearchResultTxt = true;
+      }
     });
   }
 

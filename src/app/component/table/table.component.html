@@ -1,4 +1,4 @@
-<div class="container" style="text-align: center;">
+<div class="container" style="text-align: center;" *ngIf="!isEmptyList && !displaySearchResultTxt">
     <form [formGroup]="form" class="form-search" fxLayout="column" fxLayoutAlign="space-between center" (ngSubmit)="submit()">
         <mat-form-field style="width:50vw">
             <mat-label>Filter by Author</mat-label>
@@ -10,7 +10,7 @@
     </form>
 </div>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" *ngIf="!isEmptyList && !displaySearchResultTxt">
     <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onSorting($event)">
 
         <ng-container matColumnDef="id">
@@ -48,3 +48,17 @@
         [pageSize]="this.tableOption.pageSize" [pageIndex]="this.tableOption.pageNumber"
         (page)="changePaging($event)"></mat-paginator>
 </div>
+
+<div class="cmp-empty-result-main-warapper">
+    <ng-container *ngIf="displaySearchResultTxt">
+        <span class="elm-main-header">Search Results <span>(0)</span></span>
+        <div class="empty-content-area" >
+            <mat-icon>search</mat-icon>
+            <span class="elm-text-info">Data Not Found</span>
+        </div>
+    </ng-container>
+    <div class="empty-content-area" *ngIf="isEmptyList && !displaySearchResultTxt">
+        <span class="elm-text-info">No Data</span>
+    </div>
+</div>
+

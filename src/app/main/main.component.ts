@@ -10,7 +10,7 @@ import { HelperService } from '../service/helper.service';
   providers: [HelperService]
 })
 export class MainComponent implements OnInit {
-  visible = [false, false, false, false, false, false, false, true];
+  visible = [false, false, false, false, false, false, false, false];
 
   someVar$ = new Subject<number>;
 
