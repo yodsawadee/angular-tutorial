@@ -16,10 +16,8 @@
     background-color: #ffffff;
 }
 
-// You can pass width && height
-/* or just pass width and the height
-   will default to the width value */
-   @mixin box($width, $height: auto) {
+// You can pass width && height or just pass width and the height will default to the width value
+@mixin box($width, $height: auto) {
     width: $width;
     height: $height;
 }

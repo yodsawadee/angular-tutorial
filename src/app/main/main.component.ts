@@ -10,12 +10,21 @@ import { HelperService } from '../service/helper.service';
   providers: [HelperService]
 })
 export class MainComponent implements OnInit {
-  visible = [false, false, false, false, false, false, false, false];
+  visible = [
+    false, // Template-driven form
+    false, // Reactive Form
+    false, // Subject, Observables
+    false, // Built-in Directives
+    false, // Directive
+    false, // Pipe
+    false, // API
+    false // table
+  ];
 
-  someVar$ = new Subject<number>;
+  // someVar$ = new Subject<number>;
 
   constructor(
-    private helperService: HelperService,
+    // private helperService: HelperService,
     private router: Router
     ) { }
 
@@ -45,29 +54,33 @@ export class MainComponent implements OnInit {
   ngOnInit() { 
     // console.log(this.solutionOddOccurrencesInArray([9, 3, 9,3,9,7,9]));
 
-    this.helperService.someVar = 100;
+    // this.helperService.someVar = 100;
 
-    this.someVar$.subscribe(it=> {
-      // console.log('this.helperService.someVar = ',this.helperService.someVar);
-      this.helperService.someVar += it;
-    });
+    // this.someVar$.subscribe(it=> {
+    //   // console.log('this.helperService.someVar = ',this.helperService.someVar);
+    //   this.helperService.someVar += it;
+    // });
 
-    this.someVar$.next(1); //do only on first time this.helperService.someVar=101
+    // this.someVar$.next(1); //do only on first time this.helperService.someVar=101
   }
 
   toggleCollapse(id: number): void {
     this.visible[id] = !this.visible[id];
 
-    this.someVar$.next(50); //do repeat += 50 ==> this.helperService.someVar=151 +50+50+...
+    // this.someVar$.next(50); //do repeat += 50 ==> this.helperService.someVar=151 +50+50+...
 
-    this.helperService.subscribeToApiFailures(() => {
-      // do something
-      console.log(this.visible)
-    });
+    // this.helperService.subscribeToApiFailures(() => {
+    //   // do something
+    //   console.log(this.visible)
+    // });
   }
 
   goto() {
     this.router.navigateByUrl('/page');
+  }
+
+  getReactiveFormVal(val:any) {
+    console.log('getReactiveFormVal', val)
   }
 
 }

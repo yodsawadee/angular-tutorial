@@ -28,9 +28,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { DebounceClickDirective } from './use-custom-directive/directive/debounce-click.directive';
+import { DebounceSubmitDirective } from './use-custom-directive/directive/debounce-submit.directive';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import {MatIconModule} from '@angular/material/icon';
     PercentagePipe,
     FilterPipe,
     TableComponent,
+    DebounceClickDirective,
+    DebounceSubmitDirective,
   ],
   imports: [
     CommonModule,
@@ -67,7 +72,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule, 
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

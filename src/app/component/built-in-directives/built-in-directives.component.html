@@ -1,47 +1,67 @@
-<textarea rows={{2}} cols={{80}} placeholder="Enter name" 
-    [ngModel]="name" (ngModelChange)="nameChange($event)" #nameRef
-  >
-</textarea><br/>
-<span *ngIf="nameStr?.length > 0; else noNameInput">Result: {{nameStr}}</span>
-<ng-template #noNameInput>Name is not yet enter</ng-template>
-<br/>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Data binding</mat-panel-title>
+            <!-- <mat-panel-description> This is a summary of the content </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        One-way: view target -> data source<br />
+        <textarea rows={{2}} cols={{80}} placeholder="Enter name" [ngModel]="name" (ngModelChange)="nameChange($event)" #nameRef></textarea><br />
+        Two-way: sequence of view -> source -> view<br />
+        <textarea rows={{2}} cols={{80}} placeholder="Enter name" (input)="nameChange($any($event.target).value)" [(ngModel)]="name"></textarea><br/>
+        One-way: data source -> view target<br />
+        <span *ngIf="nameStr?.length > 0; else noNameInput">Result: {{nameStr}}</span>
+        <ng-template #noNameInput>Name is not yet enter!!</ng-template>
+    </mat-expansion-panel>
 
-<br/>========================================================<br/>
-<ng-container *ngTemplateOutlet="detailsBody"></ng-container>
-&nbsp;<button (click)="toggleForm()" class="btn btn-primary">Switch Form</button>
-<br/>========================================================<br/>
-reuse content: <ng-container *ngTemplateOutlet="detailsBody"></ng-container>
-<br/>========================================================<br/><br/>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Content projection </mat-panel-title>
+        </mat-expansion-panel-header>
+        <br />========================================================<br />
+        <ng-container *ngTemplateOutlet="detailsBody"></ng-container>
+        &nbsp;<button (click)="toggleForm()" class="btn btn-primary">Switch Form</button>
+        <br />========================================================<br />
+        reuse content: <ng-container *ngTemplateOutlet="detailsBody"></ng-container>
+        <br />========================================================<br /><br />
+    </mat-expansion-panel>
 
-title: <input type="text" [ngModel]="title" (ngModelChange)="titleChange($event)">
-subtitle: <input type="text" [ngModel]="subtitle" (ngModelChange)="subtitleChange($event)">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Multi-slot content projection </mat-panel-title>
+        </mat-expansion-panel-header>
+        title: <input type="text" [ngModel]="title" (ngModelChange)="titleChange($event)">
+        subtitle: <input type="text" [ngModel]="subtitle" (ngModelChange)="subtitleChange($event)">
 
-<transaction-summary [title]="title" [subtitle]="subtitle">
-    <ng-container slot-title>
-        slot-title content
-    </ng-container>
-    <ng-container summary-detail>
-        summary-detail content
-    </ng-container>
-    <ng-container action-button>
-        <button>back button</button>
-        <button>next button</button>
-    </ng-container>
-</transaction-summary>
-
-<span *ngFor="let data of dataList; index as i; trackBy: trackByFn">
-    <li >index:{{i}} => {{data.author}}</li>
-    <!-- <img src="{{data.download_url}}" width="500"> -->
-</span>
+        <transaction-summary [title]="title" [subtitle]="subtitle">
+            <ng-container slot-title>
+                <div style="width: 80%; background-color: aquamarine; text-align: center;">slot-title content<br />new line
+                </div>
+            </ng-container>
+            <ng-container summary-detail>
+                <div style="width: 100%; background-color: #7fb6ff; text-align: center;">summary-detail content<br />new line
+                </div>
+            </ng-container>
+            <ng-container action-button>
+                <button>back button</button>
+                <button>next button</button>
+            </ng-container>
+        </transaction-summary>
+    </mat-expansion-panel>
+</mat-accordion>
 
 <ng-template #detailsBody>
     <ng-container [ngSwitch]="typeOfForm">
         <!-- <ng-container *ngSwitchCase="'form1'" [ngTemplateOutlet]="form1Body"></ng-container> -->
         <ng-template *ngSwitchCase="'form1'" [ngTemplateOutlet]="form1Body"></ng-template>
         <ng-template *ngSwitchCase="'form2'" [ngTemplateOutlet]="form2Body"></ng-template>
-        <ng-template ngSwitchDefault>default form</ng-template> 
+        <ng-template ngSwitchDefault>default form</ng-template>
     </ng-container>
 </ng-template>
-
 <ng-template #form1Body>FORM 1</ng-template>
 <ng-template #form2Body>FORM 2</ng-template>
+
+<br>Data list
+<div *ngFor="let data of dataList; index as i; trackBy: trackByFn" style="margin-left: 2rem;">
+    <li>index={{i}} author: {{data.author}}</li>
+    <!-- <img src="{{data.download_url}}" width="500"> -->
+</div>

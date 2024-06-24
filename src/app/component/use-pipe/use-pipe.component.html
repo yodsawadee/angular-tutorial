@@ -24,7 +24,7 @@
             <td><input type="number" value="std.marks" [(ngModel)]="std.marks"></td>
             <td>{{std.marks | percentage: totalMarks : 3 }}</td>
             <!-- <td>{{std.DOB | date: 'fullDate' | uppercase}}</td> -->
-            <td>{{std.DOB | date: helperService.dateFormat(std.DOB, 'dd MMM yyyy') }}</td>
+            <td>{{std.DOB | date: helperService.dateFormat(std.DOB, 'dd-MM-yyyy') }}</td>
             <td>{{std.gender | lowercase}}</td>
         </tr>
     </table>

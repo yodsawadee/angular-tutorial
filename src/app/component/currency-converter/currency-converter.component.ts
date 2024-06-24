@@ -6,23 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./currency-converter.component.scss']
 })
 export class CurrencyConverterComponent {
-title = "Currency Converter";
+  title = "Currency Converter";
 
-yenValue: number = 0;
-usdValue: number = 0;
+  yenValue: number = 0;
+  usdValue: number = 0;
 
-yenValueStr: string = '';
-usdValueStr: string = '';
+  yenValueStr: string = '';
+  usdValueStr: string = '';
 
-onUsdValueChange(value: string) {
-  this.usdValue = parseInt(value);
-  this.yenValue = this.usdValue*110;
-  this.yenValueStr = this.yenValue.toString();
-}
+  usdValueChange(value: string) {
+    console.log('usdValueChange =',value)
+    this.usdValue = parseInt(value);
+    this.yenValue = this.usdValue*110;
+    this.yenValueStr = this.yenValue.toString();
+  }
 
-onYenValueChange(value: string) {
-  this.yenValue = parseInt(value);
-  this.usdValue = this.yenValue*0.0090;
-  this.usdValueStr = this.usdValue.toString();
-}
+  yenValueChange(value: string) {
+    console.log('yenValueChange =',value)
+    this.yenValue = parseInt(value);
+    this.usdValue = this.yenValue*0.0090;
+    this.usdValueStr = this.usdValue.toString();
+  }
 }

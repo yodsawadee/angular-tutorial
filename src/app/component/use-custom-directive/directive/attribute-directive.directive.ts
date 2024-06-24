@@ -8,7 +8,7 @@ export class AttributeDirectiveDirective implements OnInit {
   constructor(private element: ElementRef) {}
 
   ngOnInit(): void {
-    this.element.nativeElement.style.backgroundColor = "#C8E6C9";
+    this.element.nativeElement.style.backgroundColor = "#C8E6C9"; // light green
   }
 
 }

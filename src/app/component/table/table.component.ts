@@ -56,9 +56,9 @@ export class TableComponent implements AfterViewInit, OnInit {
     this.getData({ id: 0, title: '', body: '', author: this.author, tableOption: this.tableOption });
   }
 
-  getData(req:StoryReq) {
-    this.apiResponse = this.httpService.getStory(req).subscribe((it) => {
-      this.apiResponse = it;
+  async getData(req:StoryReq) {
+    try {
+      this.apiResponse = await this.httpService.getStory(req);
       console.log('apiResponse',this.apiResponse)
       if (this.apiResponse?.content?.length > 0) {
         this.dataSource = new MatTableDataSource<any>(this.apiResponse.content);
@@ -68,7 +68,10 @@ export class TableComponent implements AfterViewInit, OnInit {
         this.isEmptyList = true;
         this.displaySearchResultTxt = true;
       }
-    });
+    } catch(err) {
+      this.isEmptyList = true;
+      this.displaySearchResultTxt = true;
+    }
   }
 
   changePaging(pageObj: PageEvent) {

@@ -32,6 +32,7 @@ export class ApiDataComponent implements OnInit {
       subscriber.next('todo 3')
       subscriber.complete()
     })
+    console.log('before data$.subscribe')
     data$.subscribe((value:any) => console.log(value))
 
     const value = await data$.toPromise(); // wait for all data to come
@@ -59,6 +60,6 @@ export class ApiDataComponent implements OnInit {
   }
 
   async getTodos() {
-    console.log(await this.httpService.getTodos());
+    console.log('getTodos',await this.httpService.getTodos())
   }
 }

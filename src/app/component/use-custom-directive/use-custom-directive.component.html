@@ -1,5 +1,24 @@
-<p appHostListenerDirective appAttributeDirective>use-custom-directive works!</p>
+All use appHostListenerDirective <br><br>
 
-<div appHostListenerDirective [appCustomDirective]="{backgroundColor: active ? 'pink': 'yellow', color: 'red', fontWeight: 'bold'}">use-custom-directive works!</div>
+<p appHostListenerDirective appAttributeDirective>appAttributeDirective</p>
 
-<div appHostListenerDirective appHostBindingDirective>use-custom-directive works!</div>
+<p appHostListenerDirective [appCustomDirective]="{backgroundColor: active ? 'pink': 'yellow', color: 'red', fontWeight: 'bold'}">[appCustomDirective]</p>
+
+<p appHostListenerDirective appHostBindingDirective>appHostBindingDirective</p>
+
+<button mat-fab extended (click)="getDebounceClick($event)" appDebounceClick style="margin-right: 1rem; background-color: brown;">Nomal Click</button>
+<button mat-fab extended (debounceClick)="getDebounceClick($event)" appDebounceClick>Debounce Click</button>*can prevent double click (sent 1 req at a time)
+<br><br>
+
+<form [formGroup]="form" (ngSubmit)="getDebounceSubmit($event)">
+    Enter name: <input type="text" formControlName="name" [(ngModel)]="name">
+    <span class="input-container">
+        <button mat-stroked-button type="submit" style="background-color: darksalmon;">Nomal Submit</button>
+    </span>
+</form>
+<form [formGroup]="form" (debounceSubmit)="getDebounceSubmit($event)" appDebounceSubmit>
+    Enter name: <input type="text" formControlName="name" [(ngModel)]="name">
+    <span class="input-container">
+        <button mat-stroked-button type="submit" style="background-color: rgb(150, 190, 150);">Debounce Submit</button>*can prevent double submit (sent 1 req at a time)
+    </span>
+</form>

@@ -1,0 +1,992 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=0&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 1,
+              "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+              "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/0/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 2,
+              "title": "qui est esse",
+              "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/1/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 3,
+              "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+              "body": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/2/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 4,
+              "title": "eum et est occaecati",
+              "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/3/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 5,
+              "title": "nesciunt quas odio",
+              "body": "repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/4/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 0,
+            "pageNumber": 0,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 6,
+          "totalElements": 30,
+          "first": true,
+          "size": 5,
+          "number": 0,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=1&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 6,
+              "title": "dolorem eum magni eos aperiam quia",
+              "body": "ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/5/5000/3334",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 7,
+              "title": "magnam facilis autem",
+              "body": "dolore placeat quibusdam ea quo vitae magni quis enim qui quis quo nemo aut saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/6/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 8,
+              "title": "dolorem dolore est ipsam",
+              "body": "dignissimos aperiam dolorem qui eum facilis quibusdam animi sint suscipit qui sint possimus cum quaerat magni maiores excepturi ipsam ut commodi dolor voluptatum modi aut vitae",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/7/4728/3168",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 9,
+              "title": "nesciunt iure omnis dolorem tempora et accusantium",
+              "body": "consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/8/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 10,
+              "title": "optio molestias id quia eum",
+              "body": "quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/9/5000/3269",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 5,
+            "pageNumber": 1,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 6,
+          "totalElements": 30,
+          "first": false,
+          "size": 5,
+          "number": 1,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=2&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 11,
+              "title": "et ea vero quia laudantium autem",
+              "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus accusamus in eum beatae sit vel qui neque voluptates ut commodi qui incidunt ut animi commodi",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/10/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 12,
+              "title": "in quibusdam tempore odit est dolorem",
+              "body": "itaque id aut magnam praesentium quia et ea odit et ea voluptas et sapiente quia nihil amet occaecati quia id voluptatem incidunt ea est distinctio odio",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/11/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 13,
+              "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+              "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque iste corrupti reiciendis voluptatem eius rerum sit cumque quod eligendi laborum minima perferendis recusandae assumenda consectetur porro architecto ipsum ipsam",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/12/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 14,
+              "title": "voluptatem eligendi optio",
+              "body": "fuga et accusamus dolorum perferendis illo voluptas non doloremque neque facere ad qui dolorum molestiae beatae sed aut voluptas totam sit illum",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/13/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 15,
+              "title": "eveniet quod temporibus",
+              "body": "reprehenderit quos placeat velit minima officia dolores impedit repudiandae molestiae nam voluptas recusandae quis delectus officiis harum fugiat vitae",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/14/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 10,
+            "pageNumber": 2,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 6,
+          "totalElements": 30,
+          "first": false,
+          "size": 5,
+          "number": 2,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=3&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 16,
+              "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
+              "body": "suscipit nam nisi quo aperiam aut asperiores eos fugit maiores voluptatibus quia voluptatem quis ullam qui in alias quia est consequatur magni mollitia accusamus ea nisi voluptate dicta",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/15/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 17,
+              "title": "fugit voluptas sed molestias voluptatem provident",
+              "body": "eos voluptas et aut odit natus earum aspernatur fuga molestiae ullam deserunt ratione qui eos qui nihil ratione nemo velit ut aut id quo",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/16/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 18,
+              "title": "voluptate et itaque vero tempora molestiae",
+              "body": "eveniet quo quis laborum totam consequatur non dolor ut et est repudiandae est voluptatem vel debitis et magnam",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/17/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 19,
+              "title": "adipisci placeat illum aut reiciendis qui",
+              "body": "illum quis cupiditate provident sit magnam ea sed aut omnis veniam maiores ullam consequatur atque adipisci quo iste expedita sit quos voluptas",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/18/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 20,
+              "title": "doloribus ad provident suscipit at",
+              "body": "qui consequuntur ducimus possimus quisquam amet similique suscipit porro ipsam amet eos veritatis officiis exercitationem vel fugit aut necessitatibus totam omnis rerum consequatur expedita quidem cumque explicabo",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/19/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 15,
+            "pageNumber": 3,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 6,
+          "totalElements": 30,
+          "first": false,
+          "size": 5,
+          "number": 3,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=4&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 21,
+              "title": "asperiores ea ipsam voluptatibus modi minima quia sint",
+              "body": "repellat aliquid praesentium dolorem quo sed totam minus non itaque nihil labore molestiae sunt dolor eveniet hic recusandae veniam tempora et tenetur expedita sunt",
+              "author": "Aleks Dorohovich",
+              "img": "https://picsum.photos/id/20/3670/2462",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 22,
+              "title": "dolor sint quo a velit explicabo quia nam",
+              "body": "eos qui et ipsum ipsam suscipit aut sed omnis non odio expedita earum mollitia molestiae aut atque rem suscipit nam impedit esse",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/21/3008/2008",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 23,
+              "title": "maxime id vitae nihil numquam",
+              "body": "veritatis unde neque eligendi quae quod architecto quo neque vitae est illo sit tempora doloremque fugit quod et et vel beatae sequi ullam sed tenetur perspiciatis",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/22/4434/3729",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 24,
+              "title": "autem hic labore sunt dolores incidunt",
+              "body": "enim et ex nulla omnis voluptas quia qui voluptatem consequatur numquam aliquam sunt totam recusandae id dignissimos aut sed asperiores deserunt",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/23/3887/4899",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 25,
+              "title": "rem alias distinctio quo quis",
+              "body": "ullam consequatur ut omnis quis sit vel consequuntur ipsa eligendi ipsum molestiae et omnis error nostrum molestiae illo tempore quia et distinctio",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/24/4855/1803",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 20,
+            "pageNumber": 4,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 6,
+          "totalElements": 30,
+          "first": false,
+          "size": 5,
+          "number": 4,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=5&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 26,
+              "title": "est et quae odit qui non",
+              "body": "similique esse doloribus nihil accusamus omnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus perspiciatis cum ut laudantium omnis aut molestiae vel vero",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/25/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 27,
+              "title": "quasi id et eos tenetur aut quo autem",
+              "body": "eum sed dolores ipsam sint possimus debitis occaecati debitis qui qui et ut placeat enim earum aut odit facilis consequatur suscipit necessitatibus rerum sed inventore temporibus consequatur",
+              "author": "Vadim Sherbakov",
+              "img": "https://picsum.photos/id/26/4209/2769",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 28,
+              "title": "delectus ullam et corporis nulla voluptas sequi",
+              "body": "non et quaerat ex quae ad maiores maiores recusandae totam aut blanditiis mollitia quas illo ut voluptatibus voluptatem similique nostrum eum",
+              "author": "Yoni Kaplan-Nadel",
+              "img": "https://picsum.photos/id/27/3264/1836",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 29,
+              "title": "iusto eius quod necessitatibus culpa ea",
+              "body": "odit magnam ut saepe sed non qui tempora atque nihil accusamus illum doloribus illo dolor eligendi repudiandae odit magni similique sed cum maiores",
+              "author": "Jerry Adney",
+              "img": "https://picsum.photos/id/28/4928/3264",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 30,
+              "title": "a quo magni similique perferendis",
+              "body": "alias dolor cumque impedit blanditiis non eveniet odio maxime blanditiis amet eius quis tempora quia autem rem a provident perspiciatis quia",
+              "author": "Go Wild",
+              "img": "https://picsum.photos/id/29/4000/2670",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 25,
+            "pageNumber": 5,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": true,
+          "totalPages": 6,
+          "totalElements": 30,
+          "first": false,
+          "size": 5,
+          "number": 5,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=0&size=10&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 1,
+              "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+              "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/0/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 2,
+              "title": "qui est esse",
+              "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/1/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 3,
+              "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+              "body": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/2/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 4,
+              "title": "eum et est occaecati",
+              "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/3/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 5,
+              "title": "nesciunt quas odio",
+              "body": "repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/4/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 6,
+              "title": "dolorem eum magni eos aperiam quia",
+              "body": "ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/5/5000/3334",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 7,
+              "title": "magnam facilis autem",
+              "body": "dolore placeat quibusdam ea quo vitae magni quis enim qui quis quo nemo aut saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/6/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 8,
+              "title": "dolorem dolore est ipsam",
+              "body": "dignissimos aperiam dolorem qui eum facilis quibusdam animi sint suscipit qui sint possimus cum quaerat magni maiores excepturi ipsam ut commodi dolor voluptatum modi aut vitae",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/7/4728/3168",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 9,
+              "title": "nesciunt iure omnis dolorem tempora et accusantium",
+              "body": "consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/8/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 10,
+              "title": "optio molestias id quia eum",
+              "body": "quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/9/5000/3269",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 0,
+            "pageNumber": 0,
+            "pageSize": 10,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 3,
+          "totalElements": 30,
+          "first": true,
+          "size": 10,
+          "number": 0,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 10,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?page=0&size=20&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 1,
+              "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+              "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/0/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 2,
+              "title": "qui est esse",
+              "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/1/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 3,
+              "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+              "body": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/2/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 4,
+              "title": "eum et est occaecati",
+              "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/3/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 5,
+              "title": "nesciunt quas odio",
+              "body": "repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/4/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 6,
+              "title": "dolorem eum magni eos aperiam quia",
+              "body": "ut aspernatur corporis harum nihil quis provident sequi mollitia nobis aliquid molestiae perspiciatis et ea nemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/5/5000/3334",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 7,
+              "title": "magnam facilis autem",
+              "body": "dolore placeat quibusdam ea quo vitae magni quis enim qui quis quo nemo aut saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/6/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 8,
+              "title": "dolorem dolore est ipsam",
+              "body": "dignissimos aperiam dolorem qui eum facilis quibusdam animi sint suscipit qui sint possimus cum quaerat magni maiores excepturi ipsam ut commodi dolor voluptatum modi aut vitae",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/7/4728/3168",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 9,
+              "title": "nesciunt iure omnis dolorem tempora et accusantium",
+              "body": "consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/8/5000/3333",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 10,
+              "title": "optio molestias id quia eum",
+              "body": "quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error",
+              "author": "Alejandro Escamilla",
+              "img": "https://picsum.photos/id/9/5000/3269",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 11,
+              "title": "et ea vero quia laudantium autem",
+              "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus accusamus in eum beatae sit vel qui neque voluptates ut commodi qui incidunt ut animi commodi",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/10/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 12,
+              "title": "in quibusdam tempore odit est dolorem",
+              "body": "itaque id aut magnam praesentium quia et ea odit et ea voluptas et sapiente quia nihil amet occaecati quia id voluptatem incidunt ea est distinctio odio",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/11/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 13,
+              "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+              "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque iste corrupti reiciendis voluptatem eius rerum sit cumque quod eligendi laborum minima perferendis recusandae assumenda consectetur porro architecto ipsum ipsam",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/12/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 14,
+              "title": "voluptatem eligendi optio",
+              "body": "fuga et accusamus dolorum perferendis illo voluptas non doloremque neque facere ad qui dolorum molestiae beatae sed aut voluptas totam sit illum",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/13/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 15,
+              "title": "eveniet quod temporibus",
+              "body": "reprehenderit quos placeat velit minima officia dolores impedit repudiandae molestiae nam voluptas recusandae quis delectus officiis harum fugiat vitae",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/14/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 16,
+              "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
+              "body": "suscipit nam nisi quo aperiam aut asperiores eos fugit maiores voluptatibus quia voluptatem quis ullam qui in alias quia est consequatur magni mollitia accusamus ea nisi voluptate dicta",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/15/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 17,
+              "title": "fugit voluptas sed molestias voluptatem provident",
+              "body": "eos voluptas et aut odit natus earum aspernatur fuga molestiae ullam deserunt ratione qui eos qui nihil ratione nemo velit ut aut id quo",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/16/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 18,
+              "title": "voluptate et itaque vero tempora molestiae",
+              "body": "eveniet quo quis laborum totam consequatur non dolor ut et est repudiandae est voluptatem vel debitis et magnam",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/17/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 19,
+              "title": "adipisci placeat illum aut reiciendis qui",
+              "body": "illum quis cupiditate provident sit magnam ea sed aut omnis veniam maiores ullam consequatur atque adipisci quo iste expedita sit quos voluptas",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/18/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 20,
+              "title": "doloribus ad provident suscipit at",
+              "body": "qui consequuntur ducimus possimus quisquam amet similique suscipit porro ipsam amet eos veritatis officiis exercitationem vel fugit aut necessitatibus totam omnis rerum consequatur expedita quidem cumque explicabo",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/19/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 0,
+            "pageNumber": 0,
+            "pageSize": 20,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 2,
+          "totalElements": 30,
+          "first": true,
+          "size": 20,
+          "number": 0,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 20,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?author=jarvis&page=0&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 11,
+              "title": "et ea vero quia laudantium autem",
+              "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus accusamus in eum beatae sit vel qui neque voluptates ut commodi qui incidunt ut animi commodi",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/10/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 12,
+              "title": "in quibusdam tempore odit est dolorem",
+              "body": "itaque id aut magnam praesentium quia et ea odit et ea voluptas et sapiente quia nihil amet occaecati quia id voluptatem incidunt ea est distinctio odio",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/11/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 13,
+              "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+              "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque iste corrupti reiciendis voluptatem eius rerum sit cumque quod eligendi laborum minima perferendis recusandae assumenda consectetur porro architecto ipsum ipsam",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/12/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 14,
+              "title": "voluptatem eligendi optio",
+              "body": "fuga et accusamus dolorum perferendis illo voluptas non doloremque neque facere ad qui dolorum molestiae beatae sed aut voluptas totam sit illum",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/13/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            },
+            {
+              "id": 15,
+              "title": "eveniet quod temporibus",
+              "body": "reprehenderit quos placeat velit minima officia dolores impedit repudiandae molestiae nam voluptas recusandae quis delectus officiis harum fugiat vitae",
+              "author": "Paul Jarvis",
+              "img": "https://picsum.photos/id/14/2500/1667",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 0,
+            "pageNumber": 0,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": false,
+          "totalPages": 2,
+          "totalElements": 10,
+          "first": true,
+          "size": 5,
+          "number": 0,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 5,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/jpa/story/get?author=go&page=0&size=5&sort=id&order=ASC"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "content": [
+            {
+              "id": 30,
+              "title": "a quo magni similique perferendis",
+              "body": "alias dolor cumque impedit blanditiis non eveniet odio maxime blanditiis amet eius quis tempora quia autem rem a provident perspiciatis quia",
+              "author": "Go Wild",
+              "img": "https://picsum.photos/id/29/4000/2670",
+              "createdAt": "2024-06-21T04:33:47.693+00:00"
+            }
+          ],
+          "pageable": {
+            "sort": {
+              "empty": false,
+              "sorted": true,
+              "unsorted": false
+            },
+            "offset": 0,
+            "pageNumber": 0,
+            "pageSize": 5,
+            "paged": true,
+            "unpaged": false
+          },
+          "last": true,
+          "totalPages": 1,
+          "totalElements": 1,
+          "first": true,
+          "size": 5,
+          "number": 0,
+          "sort": {
+            "empty": false,
+            "sorted": true,
+            "unsorted": false
+          },
+          "numberOfElements": 1,
+          "empty": false
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding, X-Requested-With, X-Authorization",
+          "X-Content-Type-Options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "1; mode=block"
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
@@ -21,6 +21,7 @@ export class ReactiveFormComponent {
   cardNumberModel: string = '';
 
   form: FormGroup;
+  @Output() reactiveFormVal: EventEmitter<any> = new EventEmitter<any>();
 
 //   public form: FormGroup = new FormGroup({
 //     cardNumber: new FormControl('', [Validators.required, this.digitOnlyValidator(), this.lengthValidator(this.validatorOptions.cardNumberLength)]),
@@ -42,7 +43,6 @@ export class ReactiveFormComponent {
 
  ngOnInit() { 
     this.form.valueChanges.subscribe(it => {
-      console.log(this.form.value)
       this.cardNumberModel = this.form.controls['cardNumber'].getRawValue();
     });
   }
@@ -57,7 +57,7 @@ export class ReactiveFormComponent {
   submit() {
     if (this.form.valid) {
       console.log(this.form.value)
-      // this.submitForm.emit(this.form.value);
+      this.reactiveFormVal.emit(this.form.value);
     }
   }
 
