@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
 import { HelperService } from '../service/helper.service';
 
 @Component({
@@ -21,10 +20,7 @@ export class MainComponent implements OnInit {
     false // table
   ];
 
-  // someVar$ = new Subject<number>;
-
   constructor(
-    // private helperService: HelperService,
     private router: Router
     ) { }
 
@@ -53,26 +49,10 @@ export class MainComponent implements OnInit {
 
   ngOnInit() { 
     // console.log(this.solutionOddOccurrencesInArray([9, 3, 9,3,9,7,9]));
-
-    // this.helperService.someVar = 100;
-
-    // this.someVar$.subscribe(it=> {
-    //   // console.log('this.helperService.someVar = ',this.helperService.someVar);
-    //   this.helperService.someVar += it;
-    // });
-
-    // this.someVar$.next(1); //do only on first time this.helperService.someVar=101
   }
 
   toggleCollapse(id: number): void {
     this.visible[id] = !this.visible[id];
-
-    // this.someVar$.next(50); //do repeat += 50 ==> this.helperService.someVar=151 +50+50+...
-
-    // this.helperService.subscribeToApiFailures(() => {
-    //   // do something
-    //   console.log(this.visible)
-    // });
   }
 
   goto() {

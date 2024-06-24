@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subject } from 'rxjs';
+import { HelperService } from 'src/app/service/helper.service';
 
 @Component({
   selector: 'app-subject',
@@ -7,4 +9,27 @@ import { Component } from '@angular/core';
 })
 export class SubjectComponent {
 
+  someVar$ = new Subject<number>;
+
+  constructor(private helperService: HelperService) { }
+
+  ngOnInit() {
+    this.helperService.someVar = 100;
+
+    this.someVar$.subscribe(it=> {
+      this.helperService.someVar += it;
+      console.log('this.helperService.someVar = ',this.helperService.someVar);
+    });
+
+    this.someVar$.next(1); //do only on first time this.helperService.someVar=101
+  }
+
+  clickAdd50() {
+    this.someVar$.next(50); //do repeat += 50 ==> this.helperService.someVar=151 +50+50+...
+
+    this.helperService.subscribeToApiFailures(() => {
+      // do something
+      console.log('>>>>>')
+    });
+  }
 }

@@ -16,7 +16,12 @@ export class RecieveMessageComponent implements OnInit, OnDestroy {
   constructor(private helperService: HelperService) {}
 
   ngOnInit(): void {
-    this.helperService.recieveMessage().subscribe((it) => {
+    // this.helperService.recieveMessage().subscribe((it) => {
+    //   this.message = it;
+    //   console.log('message=',it)
+    // })
+    this.helperService.recieveMessageFromBehaviorSubject().subscribe((it) => {
+      console.log('behaviorSubject message=',it)
       this.message = it;
     })
   }
@@ -25,6 +30,7 @@ export class RecieveMessageComponent implements OnInit, OnDestroy {
     // this.destroy$.next();
     // this.destroy$.complete();
     this.sub$.unsubscribe();
+    console.log('ngOnDestroy sub$',this.sub$)
   }
 
 }
