@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HelperService } from 'src/app/service/helper.service';
 
@@ -7,14 +7,14 @@ import { HelperService } from 'src/app/service/helper.service';
   templateUrl: './subject.component.html',
   styleUrls: ['./subject.component.scss']
 })
-export class SubjectComponent {
+export class SubjectComponent implements OnDestroy {
 
   someVar$ = new Subject<number>;
 
   constructor(private helperService: HelperService) { }
 
   ngOnInit() {
-    this.helperService.someVar = 100;
+    this.helperService.someVar = 0;
 
     this.someVar$.subscribe(it=> {
       this.helperService.someVar += it;
@@ -26,10 +26,20 @@ export class SubjectComponent {
 
   clickAdd50() {
     this.someVar$.next(50); //do repeat += 50 ==> this.helperService.someVar=151 +50+50+...
+    this.helperService.sendMessage('50');
 
-    this.helperService.subscribeToApiFailures(() => {
-      // do something
-      console.log('>>>>>')
-    });
+    // this.helperService.subscribeToApiFailures(() => {
+    //   // do something
+    //   console.log('>>>>>')
+    // });
+  }
+  clickAdd5() {
+    this.someVar$.next(5);
+    this.helperService.sendMessage('5');
+  }
+
+  ngOnDestroy(): void {
+    console.log('ngOnDestroy')
+    this.someVar$.unsubscribe();
   }
 }

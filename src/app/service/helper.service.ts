@@ -27,13 +27,16 @@ export class HelperService implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next();
+    console.log('ngOnDestroy!!')
+    // this.destroy$.next();
     this.destroy$.complete();
+    this.subject$.complete();
+    this.behaviorSubject$.complete();
   }
 
   subscribeToApiFailures(_callback: any) {
     this.hasApiFailure$.pipe(takeUntil(this.destroy$)).subscribe((apiFailed) => {
-      // console.log('apiFailed: ', apiFailed);
+      console.log('apiFailed: ', apiFailed);
       if (apiFailed) {
         _callback();
       }
@@ -44,6 +47,8 @@ export class HelperService implements OnDestroy {
   // private subject$ = new Subject<string>();
   sendMessage(msg: string) {
     this.subject$.next(msg);
+  }
+  sendBehaviorSubjectMessage(msg: string) {
     this.behaviorSubject$.next(msg);
   }
 

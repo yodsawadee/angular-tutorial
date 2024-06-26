@@ -10,23 +10,19 @@ import { HelperService } from 'src/app/service/helper.service';
 export class SendMessageComponent implements OnInit, OnDestroy {
 
   message: string = '';
-  sub$: Subscription = new Subscription;
+  message2: string = '';
 
   constructor(private helperService: HelperService) {}
 
-  ngOnInit(): void {
-    this.helperService.recieveMessageFromBehaviorSubject().subscribe((it) => {
-      console.log('behaviorSubject message=',it)
-      this.message = it;
-    })
+  ngOnInit(): void {}
+
+  sendMessage(msg: string, type: number) {
+    if (type === 1) {
+      this.helperService.sendMessage(msg);
+    } else {
+      this.helperService.sendBehaviorSubjectMessage(msg);
+    }
   }
 
-  sendMessage(msg: string) {
-    this.helperService.sendMessage(msg);
-  }
-
-  ngOnDestroy(): void {
-    this.sub$.unsubscribe();
-    console.log('ngOnDestroy sub$',this.sub$)
-  }
+  ngOnDestroy(): void {}
 }

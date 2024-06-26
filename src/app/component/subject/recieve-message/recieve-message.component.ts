@@ -9,26 +9,34 @@ import { HelperService } from 'src/app/service/helper.service';
 })
 export class RecieveMessageComponent implements OnInit, OnDestroy {
 
+  storeVal: string[] = [];
   message: string = '';
+  message2: string = '';
   sub$: Subscription = new Subscription;
-  // destroy$ = new Subject<void>();
 
   constructor(private helperService: HelperService) {}
 
   ngOnInit(): void {
-    // this.helperService.recieveMessage().subscribe((it) => {
-    //   this.message = it;
-    //   console.log('message=',it)
-    // })
-    this.helperService.recieveMessageFromBehaviorSubject().subscribe((it) => {
-      console.log('behaviorSubject message=',it)
-      this.message = it;
-    })
+    this.sub$.add(
+      this.helperService.recieveMessage().subscribe((it) => {
+        if(it !== '') {
+          this.message = it;
+          this.storeVal.push(it)
+          console.log('this.storeVal=',this.storeVal)
+          console.log('this.helperService.someVar = ',this.helperService.someVar);
+        }
+      })
+    );
+
+    this.sub$.add(
+      this.helperService.recieveMessageFromBehaviorSubject().subscribe((it) => {
+        console.log('behaviorSubject message=',it)
+        this.message2 = it;
+      })
+    );
   }
 
   ngOnDestroy(): void {
-    // this.destroy$.next();
-    // this.destroy$.complete();
     this.sub$.unsubscribe();
     console.log('ngOnDestroy sub$',this.sub$)
   }

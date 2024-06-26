@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { timeout } from 'rxjs/operators';
 
@@ -35,6 +35,13 @@ export interface StoryReq {
   tableOption: TableOption;
 }
 
+export interface TodoRepsModel {
+  completed: boolean
+  id: number;
+  title: string;
+  userId: TableOption;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -42,7 +49,7 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPicSum(): Observable<any> { // free API opensource
+  getPicSum(): Observable<IPicSum[]> { // free API opensource
     return this.httpClient.get('https://picsum.photos/v2/list?page=1&limit=1')
     .pipe(
       map((d: any) => { // d:Array<IPicSum>
@@ -60,10 +67,10 @@ export class HttpService {
     );
   }
 
-  async getTodos(): Promise<any> {
-    const response = await this.httpClient.get('https:jsonplaceholder.typicode.com/todos/1')
-    .pipe(timeout(90000))
-    .toPromise();
+  async getTodos(): Promise<TodoRepsModel> {
+    const response = await firstValueFrom( // or lastValueFrom
+      this.httpClient.get<TodoRepsModel>('https://jsonplaceholder.typicode.com/todos/1').pipe(timeout(90000))
+    );
     return response;
   }
 

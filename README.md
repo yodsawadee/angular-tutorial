@@ -198,3 +198,95 @@ __Observable__: unicast (each subscribed observer owns an indepenent excution of
 __Special Type of Observable__: allows value to be multicasted to many observers<br/>
 - __Subject__: use when u want updates as they come
 - __Behavior Subject__: store current value (can initiallize) - use when u want the latest update as soon as they subscribe
+
+__managing asynchronous operations__
+---
+__1. Promises__<br/>
+A Promise is an object representing the eventual completion or failure of an asynchronous operation. Promises allow you to chain multiple asynchronous operations and handle errors in a structured way.
+```
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
+
+fetchData()
+    .then(data => {
+        console.log(data); // Data received
+    })
+    .catch(error => {
+        console.error(error);
+    });
+```
+
+__2. Async/Await__<br/>
+async and await provide a way to work with Promises more comfortably. async functions always return a Promise, and await can be used to pause the execution until the Promise is resolved or rejected.
+```
+async function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
+
+async function getData() {
+    try {
+        const data = await fetchData();
+        console.log(data); // Data received
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getData();
+```
+
+__3. Observables__<br/>
+Observables, provided by the RxJS library, are a more powerful way to handle asynchronous data streams. They are more flexible than Promises and are ideal for handling multiple values over time. Observables are lazy and do not execute until they are subscribed to.
+```
+const { Observable } = require('rxjs');
+
+const fetchData = new Observable(subscriber => {
+    setTimeout(() => {
+        subscriber.next("Data received");
+        subscriber.complete();
+    }, 2000);
+});
+
+fetchData.subscribe({
+    next(data) {
+        console.log(data); // Data received
+    },
+    error(err) {
+        console.error(err);
+    },
+    complete() {
+        console.log('Done');
+    }
+});
+```
+
+__Comparison__<br/>
+
+`Promises`<br/>
+- Best for single asynchronous values or events.
+- Built-in error handling using .catch().
+- Can be chained for sequential operations.<br/>
+
+`Async/Await`<br/>
+- Syntax sugar for Promises, making asynchronous code look synchronous.
+- Easier to read and write, especially with try/catch for error handling.<br/>
+
+`Subject`<br/>
+- Ideal for multiple asynchronous values or events over time (e.g., streams).
+- Lazy execution, providing better control over execution.
+- Powerful operators for transforming, combining, and handling data streams.
+- Requires subscription to start execution.<br/><br/>
+
+__Summary__
+- Use Promises if you are handling a single asynchronous operation and want to chain multiple operations.
+- Use async/await if you prefer a more synchronous-looking code structure for handling asynchronous operations, especially when dealing with multiple sequential operations.
+- Use Observables if you need to handle streams of data or multiple asynchronous values over time, and you require more advanced features for managing complex asynchronous workflows.

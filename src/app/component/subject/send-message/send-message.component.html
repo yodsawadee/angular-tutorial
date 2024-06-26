@@ -1,2 +1,6 @@
 <input type="text" #msg [(ngModel)]="message"> 
-<button (click)="sendMessage(msg.value)">Send Message</button>
+<button (click)="sendMessage(msg.value, 1)">Send Message</button>
+<br><br>
+<input type="text" #msg2 [(ngModel)]="message2"> 
+<button (click)="sendMessage(msg2.value, 2)">Send BehaviorSubject Message</button>
+<br><br>
