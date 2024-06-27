@@ -3,13 +3,13 @@
 <button  class="btn btn-light" (click)="goto()">go to Page</button>
 <!-- <a routerLink="/page"><button class="btn btn-light">go to Page</button></a> -->
 
-<button (click)="toggleCollapse(0)" cButton class="btn btn-primary">Template-driven form</button>
-<button (click)="toggleCollapse(1)" cButton class="btn btn-success">Reactive Form</button>
-<button (click)="toggleCollapse(3)" cButton class="btn btn-warning">Built-in Directives</button>
-<button (click)="toggleCollapse(4)" cButton class="btn btn-info">Directive</button>
-<button (click)="toggleCollapse(5)" cButton class="btn btn-secondary">Pipe</button>
-<button (click)="toggleCollapse(6)" cButton class="btn btn-dark">API (Promise & Observable)</button>
-<button (click)="toggleCollapse(2)" cButton class="btn btn-danger">Observables (Subject & BehaviorSubject)</button>
+<button (click)="toggleCollapse(0)" class="btn btn-primary">Template-driven form</button>
+<button (click)="toggleCollapse(1)" class="btn btn-success">Reactive Form</button>
+<button (click)="toggleCollapse(3)" class="btn btn-warning">Built-in Directives</button>
+<button (click)="toggleCollapse(4)" class="btn btn-info">Directive</button>
+<button (click)="toggleCollapse(5)" class="btn btn-secondary">Pipe</button>
+<button (click)="toggleCollapse(6)" class="btn btn-dark">API (Promise & Observable)</button>
+<button (click)="toggleCollapse(2)" class="btn btn-danger">Observables (Subject & BehaviorSubject)</button>
 <br/>
 <button mat-fab extended (click)="toggleCollapse(7)">
     <mat-icon>table</mat-icon>
@@ -17,11 +17,11 @@
 </button>
 
 <br/><br/>
-<div [visible]="visible[0]" cCollapse *ngIf="visible[0]"><app-currency-converter></app-currency-converter></div>
-<div [visible]="visible[1]" cCollapse *ngIf="visible[1]"><app-reactive-form (reactiveFormVal)="getReactiveFormVal($event)"></app-reactive-form></div>
-<div [visible]="visible[2]" cCollapse *ngIf="visible[2]"><app-subject></app-subject></div>
-<div [visible]="visible[3]" cCollapse *ngIf="visible[3]"><app-built-in-directives></app-built-in-directives></div>
-<div [visible]="visible[4]" cCollapse *ngIf="visible[4]"><app-use-custom-directive></app-use-custom-directive></div>
-<div [visible]="visible[5]" cCollapse *ngIf="visible[5]"><app-use-pipe></app-use-pipe></div>
-<div [visible]="visible[6]" cCollapse *ngIf="visible[6]"><app-api-data></app-api-data></div>
-<div [visible]="visible[7]" cCollapse *ngIf="visible[7]"><app-table></app-table></div>
+<div *ngIf="visible[0]"><app-currency-converter></app-currency-converter></div>
+<div *ngIf="visible[1]"><app-reactive-form (reactiveFormVal)="getReactiveFormVal($event)"></app-reactive-form></div>
+<div *ngIf="visible[2]"><app-subject></app-subject></div>
+<div *ngIf="visible[3]"><app-built-in-directives></app-built-in-directives></div>
+<div *ngIf="visible[4]"><app-use-custom-directive></app-use-custom-directive></div>
+<div *ngIf="visible[5]"><app-use-pipe></app-use-pipe></div>
+<div *ngIf="visible[6]"><app-api-data></app-api-data></div>
+<div *ngIf="visible[7]"><app-table></app-table></div>
