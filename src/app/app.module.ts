@@ -14,6 +14,8 @@ import { MainComponent } from './main/main.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
+import * as AOS from 'aos';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,4 +37,12 @@ import {MatIconModule} from '@angular/material/icon';
   schemas : [CUSTOM_ELEMENTS_SCHEMA],
   exports : []
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    setTimeout(()=>{
+      AOS.init({
+        duration: 700
+      });
+    }, 200);
+  }
+}
