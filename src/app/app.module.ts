@@ -15,11 +15,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
 import * as AOS from 'aos';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,10 +41,8 @@ import * as AOS from 'aos';
 })
 export class AppModule { 
   constructor() {
-    setTimeout(()=>{
-      AOS.init({
-        duration: 700
-      });
-    }, 200);
+    AOS.init({
+      duration: 700
+    });
   }
 }

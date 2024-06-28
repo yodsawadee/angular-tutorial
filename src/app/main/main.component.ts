@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
     false, // Directive
     false, // Pipe
     false, // API
-    false // table
+    false, // table
   ];
 
   constructor(

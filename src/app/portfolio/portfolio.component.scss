@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header-container {
+  color: white;
+  text-align: center;
+//   background-image: url('/assets/images/107021590_p0.png');
+  background-image: url("/assets/images/IMG_0061_adjust.JPG");
+  background-size: cover;
+  background-position: center;
+  padding: 4vh 0;
+}
+
+.profile-img {
+    width: 320px;
+    height: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}

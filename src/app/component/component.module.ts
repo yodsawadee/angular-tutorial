@@ -34,6 +34,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { DebounceClickDirective } from './use-custom-directive/directive/debounce-click.directive';
 import { DebounceSubmitDirective } from './use-custom-directive/directive/debounce-submit.directive';
+import { HoverMoveDirective } from './use-custom-directive/directive/hover-move.directive';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { DebounceSubmitDirective } from './use-custom-directive/directive/deboun
     TableComponent,
     DebounceClickDirective,
     DebounceSubmitDirective,
+    HoverMoveDirective,
   ],
   imports: [
     CommonModule,
@@ -88,6 +90,7 @@ import { DebounceSubmitDirective } from './use-custom-directive/directive/deboun
     UseCustomDirectiveComponent,
     UsePipeComponent,
     TableComponent,
+    HoverMoveDirective
   ]
 })
 export class ComponentModule { }

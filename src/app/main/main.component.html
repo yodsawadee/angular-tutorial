@@ -1,8 +1,4 @@
-<div data-aos="fade-up">
 <h1>This is Angular Tutorial</h1>
-</div>
-
-
 <button  class="btn btn-light" (click)="goto()">go to Page</button>
 <!-- <a routerLink="/page"><button class="btn btn-light">go to Page</button></a> -->
 
@@ -28,3 +24,14 @@
 <div *ngIf="visible[5]"><app-use-pipe></app-use-pipe></div>
 <div *ngIf="visible[6]"><app-api-data></app-api-data></div>
 <div *ngIf="visible[7]"><app-table></app-table></div>
+
+<h2 appHoverMove>AOS (Animate On Scroll)</h2>
+<div class="container">
+    <h1 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Custom Fade Up</h1>
+    <p data-aos="fade-down" data-aos-duration="1000">Custom Fade Down</p>
+    <img src="assets/images/me.jpg" data-aos="zoom-in" data-aos-duration="2000" alt="Zoom In" width="300px">
+    <button data-aos="flip-left" data-aos-duration="1200" data-aos-delay="500">Flip Left</button>
+    <div data-aos="slide-right" data-aos-duration="800">
+        <p>Slide Right</p>
+    </div>
+</div>
