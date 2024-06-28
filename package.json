@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "server": "cd wiremock && java -jar wiremock-standalone-2.27.2.jar --port 8088 --enable-stub-cors --global-response-templating=true",
-    "test": "ng test"
+    "test": "ng test",
+    "build-prod": "ng build --configuration production --output-path docs --base-href /angular-tutorial/"
   },
   "private": true,
   "dependencies": {
