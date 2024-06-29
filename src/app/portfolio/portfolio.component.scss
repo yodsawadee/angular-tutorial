@@ -1,3 +1,5 @@
+@import "../utils/ui-theme/variables";
+
 body {
   font-family: Arial, sans-serif;
 }
@@ -19,7 +21,131 @@ body {
     z-index: 1;
 }
 
+section {
+  padding: 30px 0;
+}
+
 .section-title {
-  margin-top: 50px;
   margin-bottom: 20px;
+}
+
+#key-skill {
+  background-color: $purple-bg;
+}
+
+#work-experience {
+  background-color: $blue-bg;
+}
+
+#education {
+  background-color: $pink-bg;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, .2);
+}
+
+.cloud-1 {
+  position: absolute;
+  width: 150px; 
+  top: 20%; 
+  left: 80%;
+}
+.cloud-2 {
+  position: absolute;
+  width: 135px;
+  top: 5%;
+  left: 60%;
+}
+.cloud-3 {
+  position: absolute;
+  width: 90px;
+  top: 40%;
+  left: 72%;
+}
+.cloud-4 {
+  position: absolute;
+  width: 135px;
+  top: 30%;
+  left: 5%;
+}
+.cloud-5 {
+  position: absolute;
+  width: 200px;
+  top: 3%;
+  left: 15%;
+}
+.cloud-6 {
+  position: absolute;
+  width: 60px;
+  top: 8%;
+  left: 10%;
+}
+
+@media (max-width:761px) {
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+  .cloud-1 {
+    width: 100px;
+    left: 60%;
+  }
+  .cloud-2 {
+    width: 100px;
+  }
+  .cloud-4 {
+    width: 80px;
+  }
+}
+
+@media (max-width:573px) {
+  .cloud-4 {
+    top: 25%;
+  }
+}
+
+@media (max-width:323px) {
+  .cloud-3, .cloud-4 {
+    display: none;
+  }
+  .cloud-5 {
+    width: 50px;
+    top: 2%;
+    left: 50%;
+  }
+}
+
+@media (max-width:261px) {
+  .cloud-1, .cloud-2 {
+    display: none;
+  }
+  .cloud-5 {
+    width: 100px;
+    top: 5%;
+  }
+  .cloud-6 {
+    top: 3%;
+  }
+}
+
+@media (max-width:195px) {
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+  .cloud-5 {
+    width: 60px;
+    top: 2%;
+    left: 60%;
+  }
+  .cloud-6 {
+    top: 5%;
+  }
 }
