@@ -111,8 +111,14 @@ section {
   }
 }
 
+@media (max-width:471px) {
+  .cloud-3 {
+    display: none;
+  }
+}
+
 @media (max-width:323px) {
-  .cloud-3, .cloud-4 {
+  .cloud-4 {
     display: none;
   }
   .cloud-5 {
